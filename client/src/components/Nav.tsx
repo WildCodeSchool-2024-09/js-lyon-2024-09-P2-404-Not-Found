@@ -3,12 +3,9 @@ import "../styles/nav.css";
 function Nav() {
   return (
     <>
-      <section>
-        <img
-          src="https://static.vecteezy.com/ti/vecteur-libre/p1/5461906-mignon-ours-endormi-logo-design-gratuit-vectoriel.jpg"
-          alt="logo"
-        />
-        <p>About</p>
+      <section className="navigation">
+        <img src="client/src/images/logofrigo.png" alt="logo" />
+        <a href="./About.tsx">About</a>
       </section>
     </>
   );

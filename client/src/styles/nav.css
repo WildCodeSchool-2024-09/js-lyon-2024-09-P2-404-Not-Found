@@ -1,16 +1,17 @@
-section {
-  width: 100vw;
+.navigation {
   display: flex;
   justify-content: space-between;
-  background-color: #f5b93f;
+  background-color: var(--main-color);
   align-items: center;
+  padding: 20px;
 }
 
-section img {
+.navigation img {
   width: 20vw;
   border-radius: 100px;
 }
 
-section p {
+a {
+  text-decoration: none;
   font-family: var(--main-font);
 }

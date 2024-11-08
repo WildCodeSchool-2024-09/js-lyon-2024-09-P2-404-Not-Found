@@ -31,15 +31,18 @@ function About() {
   return (
     <>
       {/* <Nav /> */}
-      <h1>Qui sommes nous ?</h1>
-      <section className="creators">
-        {profilCreator.map((profil) => (
-          <div key={profil.id}>
-            <img src={profil.creatorImg} alt={profil.creatorName} />
-            <p>{profil.creatorName}</p>
-            <p>{profil.creatorPost}</p>
-          </div>
-        ))}
+      <section className="whoAreWe">
+        <h1>Qui sommes nous ?</h1>
+        <div className="creators">
+          {" "}
+          {profilCreator.map((profil) => (
+            <div key={profil.id}>
+              <img src={profil.creatorImg} alt={profil.creatorName} />
+              <p>{profil.creatorName}</p>
+              <p>{profil.creatorPost}</p>
+            </div>
+          ))}
+        </div>
       </section>
       <section className="history">
         <h2>Notre Histoire</h2>

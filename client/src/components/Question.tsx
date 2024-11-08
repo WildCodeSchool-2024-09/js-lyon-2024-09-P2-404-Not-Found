@@ -1,5 +1,4 @@
 import "../styles/question.css";
-// créer un composant boite à question
 
 function Question() {
   return (
@@ -7,7 +6,7 @@ function Question() {
       <section className="Questioncontainer">
         <img src="toto" alt="toto" />
         <section>
-          <article className="title">
+          <article>
             <h2>Une question qui questionne est-elle une question ?</h2>
           </article>
           <article className="anwser">
