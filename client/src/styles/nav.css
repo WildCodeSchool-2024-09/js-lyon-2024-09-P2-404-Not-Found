@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  align-items: center;
+  padding: 20px;
+}
+
+.navigation img {
+  width: 20vw;
+  border-radius: 100px;
+}
+
+a {
+  text-decoration: none;
+  font-family: var(--main-font);
+}

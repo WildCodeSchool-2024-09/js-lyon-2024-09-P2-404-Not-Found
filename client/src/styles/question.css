@@ -1,0 +1,30 @@
+.Questioncontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+}
+
+.anwser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--title-font);
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.awnser1 {
+  margin-top: 15px;
+}
+
+.awnser2 {
+  margin-top: 14px;
+}
+
+.awnser3 {
+  transform: translateX(6px);
+  margin-top: 12px;
+}

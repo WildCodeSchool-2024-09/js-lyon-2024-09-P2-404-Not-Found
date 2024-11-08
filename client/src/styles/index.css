@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-color: #f5b93f;
+  --secondary-color: #d475177a;
+  --third-color: #d3feea;
+  --main-font: "Darker Grotesque", serif;
+  --title-font: "Noto Serif Display", serif;
+  --color: black;
+  --title-text-size: 24px;
+  --main-text-size: 16px;
+}
+
+body {
+  background-image: url("../images/background-spoon.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-weight: lighter;
+  font-family: var(--title-font);
+  text-align: center;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-family: var(--main-font);
+}
