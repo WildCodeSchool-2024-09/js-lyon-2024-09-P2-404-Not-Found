@@ -1,0 +1,49 @@
+@import "./index.css";
+
+section {
+  background-color: #d4761759;
+  border-radius: 20px;
+  width: 90vw;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+p {
+  font-family: var(--main-font);
+}
+
+h1,
+h2 {
+  font-family: var(--title-font);
+}
+
+.creators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.creators img {
+  width: 30vw;
+  height: auto;
+  border-radius: 50%;
+  margin: 15px 5px;
+}
+
+.history {
+  padding: 5vh 0;
+}
+
+.history p {
+  padding: 2vh 10vh;
+}
+
+@media screen and (min-width: 600px) {
+  .creators {
+    flex-wrap: nowrap;
+  }
+  .creators img {
+    width: 20vw;
+  }
+}
