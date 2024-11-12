@@ -3,7 +3,7 @@
   justify-content: space-between;
   background-color: var(--main-color);
   align-items: center;
-  padding: 20px;
+  padding: 5vh;
 }
 
 .navigation img {
@@ -14,4 +14,10 @@
 a {
   text-decoration: none;
   font-family: var(--main-font);
+}
+
+@media screen and (min-width: 600px) {
+  .navigation {
+    padding: 5vh;
+  }
 }

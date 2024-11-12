@@ -2,5 +2,14 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  padding: 5vh;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vh 20vw;
+  }
 }
