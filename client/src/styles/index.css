@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-color: #f5b93f;
+  --secondary-color: #d47617;
+  --third-color: #d3feea;
+  --main-font: "Noto Serif Display", serif;
+  --title-font: "Darker Grotesque", serif;
+  --color: black;
+  --title-text-size: 24px;
+  --main-text-size: 16px;
+}
