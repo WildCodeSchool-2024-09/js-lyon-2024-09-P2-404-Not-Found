@@ -1,9 +1,16 @@
-.Questioncontainer {
+.inside-question {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  text-align: center;
+  margin: 2vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondary-color);
+}
+
+.Questioncontainer {
+  background-color: #ffffffcf;
   border-radius: 20px;
 }
 

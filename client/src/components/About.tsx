@@ -32,27 +32,30 @@ function About() {
     <>
       {/* <Nav /> */}
       <section className="whoAreWe">
-        <h1>Qui sommes nous ?</h1>
-        <div className="creators">
-          {" "}
-          {profilCreator.map((profil) => (
-            <div key={profil.id}>
-              <img src={profil.creatorImg} alt={profil.creatorName} />
-              <p>{profil.creatorName}</p>
-              <p>{profil.creatorPost}</p>
-            </div>
-          ))}
+        <div className="inside">
+          <h1>Qui sommes nous ?</h1>
+          <div className="creators">
+            {profilCreator.map((profil) => (
+              <div key={profil.id}>
+                <img src={profil.creatorImg} alt={profil.creatorName} />
+                <p>{profil.creatorName}</p>
+                <p>{profil.creatorPost}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section className="history">
-        <h2>Notre Histoire</h2>
-        <p>
-          Il était une fois, un groupe de 4 personnes qui se demandaient que
-          cuisiner pour leur repas de midi. Au fur et à mesure de leur
-          questionnement, ils se sont rendus compte qu'ils n'étaient
-          probablement pas les seuls à se poser si souvent la question. C'est
-          pourquoi ils créérent Plants'In.
-        </p>
+        <div className="inside">
+          <h2>Notre Histoire</h2>
+          <p>
+            Il était une fois, un groupe de 4 personnes qui se demandaient que
+            cuisiner pour leur repas de midi. Au fur et à mesure de leur
+            questionnement, ils se sont rendus compte qu'ils n'étaient
+            probablement pas les seuls à se poser si souvent la question. C'est
+            pourquoi ils créérent Plants'In.
+          </p>
+        </div>
       </section>
     </>
   );
