@@ -1,5 +1,4 @@
 import "../styles/question.css";
-// créer un composant boite à question
 
 function Question() {
   return (
