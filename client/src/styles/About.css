@@ -1,20 +1,11 @@
 @import "./index.css";
 
-section {
-  background-color: #d4761759;
+.whoAreWe,
+.history {
+  background-color: var(--secondary-color);
   border-radius: 20px;
-  width: 90vw;
   text-align: center;
   margin-top: 10vh;
-}
-
-p {
-  font-family: var(--main-font);
-}
-
-h1,
-h2 {
-  font-family: var(--title-font);
 }
 
 .creators {
