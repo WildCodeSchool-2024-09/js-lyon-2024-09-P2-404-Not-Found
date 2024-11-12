@@ -1,20 +1,20 @@
 @import "./index.css";
 
-section {
-  background-color: #d4761759;
+.inside {
+  background-color: var(--secondary-color);
   border-radius: 20px;
-  width: 90vw;
   text-align: center;
-  margin-top: 10vh;
+  margin: 2vh;
+  display: flex;
+  flex-direction: column;
 }
 
-p {
-  font-family: var(--main-font);
-}
-
-h1,
-h2 {
-  font-family: var(--title-font);
+.whoAreWe,
+.history {
+  background-color: #ffffffcf;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 5vh;
 }
 
 .creators {
@@ -25,15 +25,15 @@ h2 {
 }
 
 .creators img {
-  width: 30vw;
+  width: 10vw;
   height: auto;
   border-radius: 50%;
   margin: 15px 5px;
 }
 
-.history {
+/* .history {
   padding: 5vh 0;
-}
+} */
 
 .history p {
   padding: 2vh 10vh;
@@ -44,6 +44,6 @@ h2 {
     flex-wrap: nowrap;
   }
   .creators img {
-    width: 20vw;
+    width: 15vw;
   }
 }

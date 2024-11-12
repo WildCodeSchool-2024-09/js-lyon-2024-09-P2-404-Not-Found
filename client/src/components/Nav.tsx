@@ -1,15 +1,13 @@
 import "../styles/nav.css";
 import { Link } from "react-router-dom";
+import Logo from "../images/logofrigo.png";
 
 function Nav() {
   return (
     <>
-      <section>
+      <section className="navigation">
         <Link to="/">
-          <img
-            src="https://static.vecteezy.com/ti/vecteur-libre/p1/5461906-mignon-ours-endormi-logo-design-gratuit-vectoriel.jpg"
-            alt="logo"
-          />
+          <img src={Logo} alt="logo" />
         </Link>
 
         <p>
