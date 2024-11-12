@@ -7,9 +7,13 @@ import Question from "./components/Question";
 function App() {
   return (
     <>
-      <Nav />
-      <Question />
-      <About />
+      <nav>
+        <Nav />
+      </nav>
+      <main>
+        <Question />
+        <About />
+      </main>
     </>
   );
 }
