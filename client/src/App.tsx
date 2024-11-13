@@ -1,8 +1,10 @@
 import "./styles/App.css";
 
-import About from "./components/About";
 import Nav from "./components/Nav.tsx";
 import Question from "./components/Question";
+// ajout lea
+//import React from "react";
+import Result from "./components/Result.tsx";
 
 function App() {
   return (
@@ -12,8 +14,13 @@ function App() {
       </nav>
       <main>
         <Question />
-        <About />
+        {/* <About /> */}
       </main>
+      <div>
+        <h1>recherche recettes </h1>
+        {/* test du composant result*/}
+        <Result />
+      </div>
     </>
   );
 }
