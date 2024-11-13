@@ -1,8 +1,8 @@
 import "./styles/App.css";
 
-import About from "./components/About";
 import Nav from "./components/Nav.tsx";
 import Question from "./components/Question";
+import Country from "./components/Country.tsx";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       </nav>
       <main>
         <Question />
+        <Country />
       </main>
     </>
   );
