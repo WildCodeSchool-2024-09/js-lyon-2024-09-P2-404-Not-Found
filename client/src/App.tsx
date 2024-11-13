@@ -12,7 +12,6 @@ function App() {
       </nav>
       <main>
         <Question />
-        <About />
       </main>
     </>
   );
