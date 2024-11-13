@@ -13,11 +13,10 @@ interface dataProps {
 }
 
 function Ingredient() {
+  const [selectedIngredient, setSelectedIngredient] = useState("");
   const [listIngredients, setListIngredients] = useState<
     dataProps["meals"] | null
   >(null);
-
-  const [selectedIngredient, setSelectedIngredient] = useState("");
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/list.php?i=list")
@@ -40,13 +39,13 @@ function Ingredient() {
               <h2>Choose your main ingredient to cook :</h2>
             </article>
             <article className="anwser">
+              {/* ternaire pour listIngredients=0 */}
               <select
                 name="chooseIngredients"
                 className="choice"
                 value={selectedIngredient}
                 onChange={(e) => setSelectedIngredient(e.target.value)}
               >
-                {/* ternaire pour listIngredients=0 */}
                 {listIngredients !== null &&
                   listIngredients.length > 0 &&
                   listIngredients.map((ingredient) => (
