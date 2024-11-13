@@ -1,10 +1,11 @@
 import "../styles/nav.css";
+import Logo from "../images/logofrigo.png";
 
 function Nav() {
   return (
     <>
       <section className="navigation">
-        <img src="client/src/images/logofrigo.png" alt="logo" />
+        <img src={Logo} alt="logo" />
         <a href="./About.tsx">About</a>
       </section>
     </>

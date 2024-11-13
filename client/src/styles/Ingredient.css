@@ -1,0 +1,20 @@
+.choice {
+  padding: 2px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px, solid, white;
+  background-color: var(--main-color);
+}
+
+.outside {
+  background-color: var(--third-color);
+  border-radius: 20px;
+  width: 8vh;
+  height: 8vh;
+  margin: 5px;
+}
+
+.image {
+  width: 4vh;
+  position: center;
+}
