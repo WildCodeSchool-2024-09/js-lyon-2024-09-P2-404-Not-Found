@@ -1,8 +1,8 @@
 import "./styles/App.css";
-
 import Nav from "./components/Nav.tsx";
-import Question from "./components/Question";
 import Country from "./components/Country.tsx";
+import Ingredients from "./components/Ingredients.tsx";
+import Result2 from "./components/Result2.tsx";
 
 function App() {
   return (
@@ -11,8 +11,9 @@ function App() {
         <Nav />
       </nav>
       <main>
-        <Question />
         <Country />
+        <Ingredients />
+        <Result2 />
       </main>
     </>
   );
