@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Chef from "../images/logo-chef.png";
 
 import "../styles/question.css";
 
@@ -22,28 +23,33 @@ function Category() {
 
   return (
     <section className="Questioncontainer">
-      <img src="toto" alt="toto" />
-      <section>
-        <article>
-          <h2>Choose a category</h2>
-        </article>
-        <article className="anwser">
-          <select
-            name="category"
-            id="category"
-            value={selectCategory}
-            onChange={(e) => setSelectCategory(e.target.value)}
-          >
-            {category !== null &&
-              category.length > 0 &&
-              category.map((element) => (
-                <option value={element.strCategory} key={element.strCategory}>
-                  {element.strCategory}
-                </option>
-              ))}
-          </select>
-        </article>
-      </section>
+      <div className="inside-question">
+        <div className="outside">
+          <img src={Chef} alt="chef" className="image" />
+        </div>
+        <section>
+          <article>
+            <h2>Choose a category</h2>
+          </article>
+          <article className="anwser">
+            <select
+              className="choice"
+              name="category"
+              id="category"
+              value={selectCategory}
+              onChange={(e) => setSelectCategory(e.target.value)}
+            >
+              {category !== null &&
+                category.length > 0 &&
+                category.map((element) => (
+                  <option value={element.strCategory} key={element.strCategory}>
+                    {element.strCategory}
+                  </option>
+                ))}
+            </select>
+          </article>
+        </section>
+      </div>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import "../styles/Ingredient.css";
 import "../styles/question.css";
 import { useEffect, useState } from "react";
-import Image from "../images/vecteezy_male-chef-icon-with-friendly-face-male-chef-icon-with_20716217.png";
+import Chef from "../images/logo-chef.png";
 
 interface dataProps {
   meals: {
@@ -32,7 +32,7 @@ function Ingredient() {
       <section className="Questioncontainer">
         <div className="inside-question">
           <div className="outside">
-            <img src={Image} alt="ingredients" className="image" />
+            <img src={Chef} alt="chef" className="image" />
           </div>
           <section>
             <article className="title">

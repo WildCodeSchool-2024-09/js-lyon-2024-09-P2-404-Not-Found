@@ -3,7 +3,7 @@
   margin: 5px;
   border-radius: 5px;
   border: 1px, solid, white;
-  background-color: var(--main-color);
+  background-color: white;
 }
 
 .outside {
