@@ -1,6 +1,7 @@
 import "./styles/App.css";
+import Ingredients from "./components/Ingredients.tsx";
 import Nav from "./components/Nav.tsx";
-import Question from "./components/Question.tsx";
+import Result2 from "./components/Result2.tsx";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
         <Nav />
       </nav>
       <main>
-        <Question />
+        <Ingredients />
+        <Result2 />
       </main>
     </>
   );
