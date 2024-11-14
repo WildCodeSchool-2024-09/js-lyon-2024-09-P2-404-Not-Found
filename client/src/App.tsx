@@ -1,5 +1,4 @@
 import "./styles/App.css";
-import About from "./components/About";
 import Nav from "./components/Nav.tsx";
 import Question from "./components/Question";
 import Result2 from "./components/Result2.tsx";
@@ -12,7 +11,6 @@ function App() {
       </nav>
       <main>
         <Question />
-        <About />
         <Result2 />
       </main>
     </>
