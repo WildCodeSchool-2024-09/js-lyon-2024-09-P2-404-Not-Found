@@ -1,5 +1,5 @@
 import "../styles/About.css";
-import Nav from "./Nav";
+import Nav from "../components/Nav";
 
 const profilCreator = [
   {

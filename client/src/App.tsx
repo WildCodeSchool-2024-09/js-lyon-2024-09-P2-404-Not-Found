@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import Nav from "./components/Nav.tsx";
-import Question from "./components/Question";
+import Ingredients from "./components/Ingredients.tsx";
 import Result2 from "./components/Result2.tsx";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <Nav />
       </nav>
       <main>
-        <Question />
+        <Ingredients />
         <Result2 />
       </main>
     </>
