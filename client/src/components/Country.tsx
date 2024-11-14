@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../styles/question.css";
 import Chef from "../images/logo-chef.png";
 
 interface countryProps {
   meals: {
     strArea: string;
-  };
+  }[];
 }
 
 function Country() {
@@ -25,13 +25,16 @@ function Country() {
     <>
       <section className="Questioncontainer">
         <div className="inside-question">
-          <img src={Chef} alt="chef" width={50} />
+          <div className="outside">
+            <img src={Chef} alt="chef" className="image" />
+          </div>
           <section>
             <article>
               <h2>Select a country :</h2>
             </article>
             <article className="anwser">
               <select
+                className="choice"
                 name="country"
                 id="country"
                 value={selectCountry}
