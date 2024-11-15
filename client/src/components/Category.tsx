@@ -54,14 +54,4 @@ function Category() {
   );
 }
 
-//   function DropdownList() {
-// const [selectedValue, setselectedValue] = useState();
-// const handleChange = (event) => {
-//     setselectedValue(event.target.value);
-// };
-// return (
-//     <select value
-// )
-//   }
-
 export default Category;

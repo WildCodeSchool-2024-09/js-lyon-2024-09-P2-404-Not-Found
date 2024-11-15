@@ -1,5 +1,5 @@
 .Questioncontainer {
-  background-color: #ffffffcf;
+  background-color: var(--third-color);
   border-radius: 20px;
   margin-bottom: 10px;
 }
@@ -8,11 +8,12 @@
   background-color: var(--secondary-color);
   border-radius: 20px;
   text-align: center;
-  margin: 2vh;
+  margin: 1em;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 5em;
 }
 
 .anwser {
@@ -26,13 +27,4 @@
 
 .awnser1 {
   margin-top: 15px;
-}
-
-.awnser2 {
-  margin-top: 14px;
-}
-
-.awnser3 {
-  transform: translateX(6px);
-  margin-top: 12px;
 }

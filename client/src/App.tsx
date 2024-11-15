@@ -8,9 +8,7 @@ import Result2 from "./components/Result2.tsx";
 function App() {
   return (
     <>
-      <nav>
-        <Nav />
-      </nav>
+      <Nav />
       <main>
         <Category />
         <Country />
