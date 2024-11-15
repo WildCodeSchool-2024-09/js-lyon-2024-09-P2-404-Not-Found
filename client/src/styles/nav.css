@@ -1,16 +1,23 @@
-section {
-  width: 100vw;
+nav {
   display: flex;
   justify-content: space-between;
-  background-color: #f5b93f;
+  background-color: var(--main-color);
   align-items: center;
+  padding: 5vh;
 }
 
-section img {
+nav img {
   width: 20vw;
   border-radius: 100px;
 }
 
-section p {
+a {
+  text-decoration: none;
   font-family: var(--main-font);
+}
+
+@media screen and (min-width: 600px) {
+  nav {
+    padding: 5vh;
+  }
 }

@@ -1,15 +1,19 @@
 import "../styles/nav.css";
+import { Link } from "react-router-dom";
+import Logo from "../images/logofrigo.png";
 
 function Nav() {
   return (
     <>
-      <section>
-        <img
-          src="https://static.vecteezy.com/ti/vecteur-libre/p1/5461906-mignon-ours-endormi-logo-design-gratuit-vectoriel.jpg"
-          alt="logo"
-        />
-        <p>About</p>
-      </section>
+      <nav>
+        <Link to="/">
+          <img src={Logo} alt="logo" />
+        </Link>
+
+        <p>
+          <Link to="/about">About</Link>
+        </p>
+      </nav>
     </>
   );
 }

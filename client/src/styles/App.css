@@ -1,6 +1,14 @@
-* {
-  background-image: url("../images/pexels-karolina-grabowska-4199145.jpg");
-  padding: 0 5px;
-  margin: 0;
-  box-sizing: border-box;
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5em;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
