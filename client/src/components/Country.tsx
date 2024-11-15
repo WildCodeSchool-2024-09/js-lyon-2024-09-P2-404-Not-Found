@@ -32,7 +32,7 @@ function Country() {
             <article>
               <h2>Select a country :</h2>
             </article>
-            <article className="anwser">
+            <article>
               <select
                 className="choice"
                 name="country"

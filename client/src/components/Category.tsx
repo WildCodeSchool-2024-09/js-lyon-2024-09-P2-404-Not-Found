@@ -31,7 +31,7 @@ function Category() {
           <article>
             <h2>Choose a category</h2>
           </article>
-          <article className="anwser">
+          <article>
             <select
               className="choice"
               name="category"
