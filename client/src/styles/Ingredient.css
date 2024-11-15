@@ -9,12 +9,14 @@
 .outside {
   background-color: var(--third-color);
   border-radius: 20px;
-  width: 8vh;
-  height: 8vh;
+  width: 4em;
+  height: 4em;
   margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
-  width: 4vh;
-  position: center;
+  width: 2.2em;
 }

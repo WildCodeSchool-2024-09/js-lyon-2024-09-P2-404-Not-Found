@@ -7,10 +7,6 @@ interface Item {
   image: string;
 }
 
-// interface Result2Props {
-//   items: Item[];
-// }
-
 //faire le fech et remplacer tab par le resultat du fetch
 const tab: Item[] = [
   {
@@ -56,9 +52,9 @@ function Result2() {
               <img src={item.image} alt={item.name} className="card-image" />
             </article>
             <article className="sectiontexte">
-              <h3 className="card-title">{item.name}</h3>
-              <p className="card-category"> Category: {item.category}</p>
-              <p className="card-country"> Country: {item.country}</p>
+              <h3>{item.name}</h3>
+              <p> Category: {item.category}</p>
+              <p> Country: {item.country}</p>
             </article>
           </section>
         </div>
