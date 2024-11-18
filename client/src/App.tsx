@@ -1,18 +1,19 @@
 import "./styles/App.css";
-
-import About from "./components/About";
+import Category from "./components/Category.tsx";
+import Country from "./components/Country.tsx";
+import Ingredients from "./components/Ingredients.tsx";
 import Nav from "./components/Nav.tsx";
-import Question from "./components/Question";
+import Result2 from "./components/Result2.tsx";
 
 function App() {
   return (
     <>
-      <nav>
-        <Nav />
-      </nav>
+      <Nav />
       <main>
-        <Question />
-        <About />
+        <Category />
+        <Country />
+        <Ingredients />
+        <Result2 />
       </main>
     </>
   );

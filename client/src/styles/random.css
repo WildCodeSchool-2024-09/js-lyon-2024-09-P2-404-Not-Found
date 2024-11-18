@@ -1,0 +1,33 @@
+.DisplayRandom {
+  display: flex;
+  flex-direction: row;
+}
+
+.mealDetails {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+}
+
+.DisplayRandom,
+img {
+  border-radius: 2%;
+  padding: auto;
+  margin: 2rem 0;
+}
+p {
+  margin-right: 2rem;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+li {
+  text-align: justify;
+}
