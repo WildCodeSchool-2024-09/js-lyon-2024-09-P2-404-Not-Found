@@ -1,5 +1,4 @@
 import "../styles/About.css";
-import Nav from "../components/Nav";
 
 const profilCreator = [
   {
@@ -31,7 +30,6 @@ const profilCreator = [
 function About() {
   return (
     <>
-      <Nav />
       <main>
         <section className="whoAreWe">
           <div className="inside">

@@ -9,7 +9,6 @@ function Nav() {
         <Link to="/">
           <img src={Logo} alt="logo" />
         </Link>
-
         <p>
           <Link to="/about">About</Link>
         </p>
