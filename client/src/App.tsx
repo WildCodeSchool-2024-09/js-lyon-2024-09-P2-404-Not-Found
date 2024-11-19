@@ -1,19 +1,15 @@
 import "./styles/App.css";
-import Category from "./components/Category.tsx";
-import Country from "./components/Country.tsx";
-import Ingredients from "./components/Ingredients.tsx";
 import Nav from "./components/Nav.tsx";
-import Result2 from "./components/Result2.tsx";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Nav />
+      <nav>
+        <Nav />
+      </nav>
       <main>
-        <Category />
-        <Country />
-        <Ingredients />
-        <Result2 />
+        <Outlet />
       </main>
     </>
   );
