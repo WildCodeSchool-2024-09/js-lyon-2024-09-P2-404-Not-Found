@@ -1,8 +1,6 @@
 import "./styles/App.css";
-
-import About from "./components/About";
 import Nav from "./components/Nav.tsx";
-import Question from "./components/Question";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -11,8 +9,7 @@ function App() {
         <Nav />
       </nav>
       <main>
-        <Question />
-        <About />
+        <Outlet />
       </main>
     </>
   );
