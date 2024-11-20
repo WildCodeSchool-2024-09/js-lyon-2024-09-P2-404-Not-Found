@@ -5,15 +5,14 @@ import Logo from "../images/logofrigo.png";
 function Nav() {
   return (
     <>
-      <section className="navigation">
+      <nav>
         <Link to="/">
           <img src={Logo} alt="logo" />
         </Link>
-
         <p>
           <Link to="/about">About</Link>
         </p>
-      </section>
+      </nav>
     </>
   );
 }

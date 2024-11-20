@@ -30,7 +30,6 @@ const profilCreator = [
 function About() {
   return (
     <>
-      {/* <Nav /> */}
       <section className="whoAreWe">
         <div className="inside">
           <h1>Qui sommes nous ?</h1>

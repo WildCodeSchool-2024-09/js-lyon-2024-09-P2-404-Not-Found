@@ -6,15 +6,35 @@
   background-color: white;
 }
 
+#search-select {
+  width: 80%;
+  max-width: 20rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+label {
+  font-size: 1.5rem;
+  font-family: var(--title-font);
+  color: black;
+  margin-bottom: 1rem;
+  display: block;
+}
+
 .outside {
   background-color: var(--third-color);
   border-radius: 20px;
-  width: 8vh;
-  height: 8vh;
+  width: 4em;
+  height: 4em;
   margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
-  width: 4vh;
-  position: center;
+  width: 2.2em;
 }

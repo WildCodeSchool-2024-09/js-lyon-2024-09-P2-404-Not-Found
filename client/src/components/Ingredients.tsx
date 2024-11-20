@@ -35,11 +35,10 @@ function Ingredient() {
             <img src={Chef} alt="chef" className="image" />
           </div>
           <section>
-            <article className="title">
+            <article>
               <h2>Choose your main ingredient to cook :</h2>
             </article>
-            <article className="anwser">
-              {/* ternaire pour listIngredients=0 */}
+            <article>
               <select
                 name="chooseIngredients"
                 className="choice"

@@ -26,7 +26,7 @@ function Country() {
       <section className="Questioncontainer">
         <div className="inside-question">
           <div className="outside">
-            <img src={Chef} alt="chef" className="image" />
+            <img src={Chef} alt="logo-chef" className="image" />
           </div>
           <section>
             <article>
