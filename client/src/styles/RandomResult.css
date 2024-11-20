@@ -8,7 +8,7 @@
   border-radius: 10px;
 
   margin: 20px auto;
-  width: 83%;
+  width: 50%;
 }
 
 .containerRandom h2 {
@@ -31,6 +31,7 @@
 /* Conteneur des recettes */
 .recipes-container {
   padding: 20px;
+  width: 40%;
 }
 
 /* Cartes de recettes */
