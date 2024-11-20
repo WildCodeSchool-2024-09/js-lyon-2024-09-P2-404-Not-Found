@@ -1,13 +1,16 @@
 import "./styles/App.css";
+import { Outlet } from "react-router-dom"; //2/importer le outlet dans app
 import Nav from "./components/Nav.tsx";
-import PageIngredients from "./pages/PageIngredients.tsx";
 
 function App() {
   return (
     <>
-      <Nav />
+      <nav>
+        <Nav />
+      </nav>
       <main>
-        <PageIngredients />
+        <Outlet />
+        {/* 3) outlet posé la va chercher les enfants de app déclarés dans le router */}
       </main>
     </>
   );
