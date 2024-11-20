@@ -1,0 +1,79 @@
+/* Section principale */
+.containerRandom {
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  margin: 20px auto;
+  width: 83%;
+}
+
+.containerRandom h2 {
+  font-size: 24px;
+  color: black;
+  font-family: var(--title-font);
+}
+
+/* Image du chef */
+.containerimg {
+  margin: 20px auto;
+}
+
+.containerimg .image {
+  max-width: 100px;
+  height: auto;
+  display: block;
+}
+
+/* Conteneur des recettes */
+.recipes-container {
+  padding: 20px;
+}
+
+/* Cartes de recettes */
+.recipe-cards {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.recipe-card {
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  border: 12px solid rgba(255, 255, 255, 0.846);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card h2 {
+  font-size: 19px;
+  margin-bottom: 10px;
+  color: black;
+  font-family: var(--title-font);
+}
+
+.recipe-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.recipe-card h3 {
+  font-size: 20px;
+  color: #333;
+  font-family: var(--title-font);
+}

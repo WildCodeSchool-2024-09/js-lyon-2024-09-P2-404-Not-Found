@@ -1,9 +1,8 @@
 import "./styles/App.css";
-import Category from "./components/Category.tsx";
-import Country from "./components/Country.tsx";
-import Ingredients from "./components/Ingredients.tsx";
+import { Outlet } from "react-router-dom"; //2/importer le outlet dans app
 import Nav from "./components/Nav.tsx";
-import Result2 from "./components/Result2.tsx";
+
+// import { Router } from "react-router-dom";
 
 function App() {
   return (
@@ -12,10 +11,8 @@ function App() {
         <Nav />
       </nav>
       <main>
-        <Category />
-        <Country />
-        <Ingredients />
-        <Result2 />
+        <Outlet />
+        {/* 3) outlet posé la va chercher les enfants de app déclarés dans le router */}
       </main>
     </>
   );

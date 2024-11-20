@@ -2,16 +2,24 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
+import Result from "./components/RandomResult";
 import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "/about",
-    element: <About />,
+    children: [
+      //1) selctionner les enfants pour le outlet
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/Random",
+        element: <Result />,
+      },
+    ],
   },
 ]);
 
