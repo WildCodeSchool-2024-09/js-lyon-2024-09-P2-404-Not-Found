@@ -3,17 +3,19 @@ nav {
   justify-content: space-between;
   background-color: var(--main-color);
   align-items: center;
-  padding: 5vh;
+  padding: 1vh;
 }
 
 nav img {
-  width: 20vw;
+  width: 12vw;
   border-radius: 100px;
 }
 
 a {
   text-decoration: none;
   font-family: var(--main-font);
+  font-size: 1.2rem;
+  color: white;
 }
 
 @media screen and (min-width: 600px) {
