@@ -12,7 +12,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      //1) selctionner les enfants pour le outlet
       {
         path: "/",
         element: <Home />,
