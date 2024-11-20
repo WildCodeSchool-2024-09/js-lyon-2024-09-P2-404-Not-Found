@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Home.css";
 import "../styles/question.css";
 import "../styles/Ingredient.css";
@@ -16,7 +16,7 @@ function Home() {
   } else if (search === "Ingredient") {
     navigate("/PageIngredient");
   } else if (search === "Random") {
-    navigate("/PageRandom");
+    navigate("/RandomResult");
   }
 
   return (
