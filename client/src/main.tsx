@@ -2,17 +2,17 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import About from "./pages/About";
-import Home from "./components/Home";
 import Country from "./components/Country";
-
-//  Temporaire, il faudra mettre chaque page Ingredient, Country, Random et Category comme children une fois crées
+import Result from "./components/RandomResult";
+import About from "./pages/About.tsx";
+import Home from "./pages/Home.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      //1) selctionner les enfants pour le outlet
       {
         path: "/",
         element: <Home />,
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/RandomResult",
+        element: <Result />,
       },
       {
         path: "/country",
