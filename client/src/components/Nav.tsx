@@ -11,7 +11,9 @@ function Nav() {
             <img src={Logo} alt="logo" />
           </Link>
           <p>
-            <Link to="/about">About</Link>
+            <Link to="/about" className="about-link">
+              About
+            </Link>
           </p>
         </section>
       </nav>

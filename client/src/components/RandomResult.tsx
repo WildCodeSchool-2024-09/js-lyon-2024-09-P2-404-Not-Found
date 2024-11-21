@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
+import "../styles/Result2.css";
 import "../styles/RandomResult.css";
 import Chef from "../images/logo-chef.png";
-import "../styles/Ingredient.css";
-import { Rating } from "react-simple-star-rating";
 
 // Typage
 type Meal = {
@@ -55,17 +54,22 @@ function Result() {
         </article>
       </section>
       <div className="recipes-container">
-        <section className="recipes-back">
+        <section>
           <div className="recipe-cards">
             {recipes.map((recipe) => (
-              <div className="recipe-card" key={recipe.idMeal}>
-                <img
-                  src={recipe.strMealThumb}
-                  alt={recipe.strMeal}
-                  className="recipe-image"
-                />
-                <h3>{recipe.strMeal}</h3>
-                <Rating fillColor="#FFA500" emptyColor="#ffffffcf" />
+              <div className="cards-container" key={recipe.idMeal}>
+                <section className="card">
+                  <div className="sectionimage">
+                    <img
+                      src={recipe.strMealThumb}
+                      alt={recipe.strMeal}
+                      className="card-image"
+                    />
+                  </div>
+                  <article className="sectiontexte">
+                    <h3>{recipe.strMeal}</h3>
+                  </article>
+                </section>
               </div>
             ))}
           </div>

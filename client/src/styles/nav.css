@@ -8,13 +8,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 2em;
 }
 
 nav img {
-  width: 12vw;
-  border-radius: 100px;
-  padding: 2em;
+  width: 20vh;
+  border-radius: 50%;
 }
 
 .navbar p {
@@ -24,16 +23,14 @@ nav img {
   color: white;
 }
 
-a {
+.about-link {
   text-decoration: none;
-  font-family: var(--main-font);
-  font-size: 1.2rem;
-  color: white;
+  color: black;
 }
 
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) {
   nav {
-    padding: 5vh;
+    padding: 3vh;
     color: white;
-  }
-}
+  } */
+/* } */

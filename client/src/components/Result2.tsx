@@ -1,5 +1,6 @@
 import "../styles/Result2.css";
 import { useEffect, useState } from "react";
+import { Rating } from "react-simple-star-rating";
 
 interface Item {
   meals: { strMeal: string; strMealThumb: string; idMeal: string }[];
@@ -48,6 +49,7 @@ function Result2({ selectedIngredient }: ResultProps) {
               </article>
               <article className="sectiontexte">
                 <h3>{result.strMeal}</h3>
+                <Rating fillColor="#FFA500" emptyColor="#ffffffcf" />
               </article>
             </section>
           </div>
