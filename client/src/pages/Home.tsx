@@ -14,7 +14,7 @@ function Home() {
   } else if (search === "Country") {
     navigate("/PageCountry");
   } else if (search === "Ingredient") {
-    navigate("/PageIngredient");
+    navigate("/PageIngredients");
   } else if (search === "Random") {
     navigate("/RandomResult");
   }
@@ -32,10 +32,7 @@ function Home() {
             name="search-type"
             id="search-select"
           >
-            {/* lea est passé par ici est à rajouté desabled afin de griser please choose your... comme sur les autres  */}
-            <option value="" disabled>
-              Please choose search type
-            </option>
+            <option value="">Please choose search type</option>
             <option value="Category">Category</option>
             <option value="Country">Country</option>
             <option value="Ingredient">Ingredient</option>

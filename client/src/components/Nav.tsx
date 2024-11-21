@@ -6,12 +6,14 @@ function Nav() {
   return (
     <>
       <nav>
-        <Link to="/">
-          <img src={Logo} alt="logo" />
-        </Link>
-        <p>
-          <Link to="/about">About</Link>
-        </p>
+        <section className="navbar">
+          <Link to="/">
+            <img src={Logo} alt="logo" />
+          </Link>
+          <p>
+            <Link to="/about">About</Link>
+          </p>
+        </section>
       </nav>
     </>
   );

@@ -6,15 +6,13 @@ import Country from "./components/Country";
 import Result from "./components/RandomResult";
 import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
-
-//  Temporaire, il faudra mettre chaque page Ingredient, Country, Random et Category comme children une fois crées
+import PageIngredients from "./pages/PageIngredients.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      //1) selctionner les enfants pour le outlet
       {
         path: "/",
         element: <Home />,
@@ -26,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/RandomResult",
         element: <Result />,
+      },
+      {
+        path: "/PageIngredients",
+        element: <PageIngredients />,
       },
       {
         path: "/country",
