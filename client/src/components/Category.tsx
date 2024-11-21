@@ -39,6 +39,10 @@ function Category() {
               value={selectCategory}
               onChange={(e) => setSelectCategory(e.target.value)}
             >
+              <option value="" disabled>
+                Please choose your Category 🎯
+              </option>
+              {/* fin */}
               {category !== null &&
                 category.length > 0 &&
                 category.map((element) => (

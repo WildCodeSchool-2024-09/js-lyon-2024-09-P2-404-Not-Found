@@ -45,6 +45,12 @@ function Ingredient() {
                 value={selectedIngredient}
                 onChange={(e) => setSelectedIngredient(e.target.value)}
               >
+                {/* value-->"" à l'état initial de la liste deroulante d'ingredients permetant de le selectionner, disabled --> non selectionnable dans cette liste  */}
+                <option value="" disabled>
+                  Please choose your ingredient 👩‍🍳
+                </option>
+                {/* fin */}
+                {/* debut de la liste d'ingrédiants chargé depuis l'api */}
                 {listIngredients !== null &&
                   listIngredients.length > 0 &&
                   listIngredients.map((ingredient) => (
