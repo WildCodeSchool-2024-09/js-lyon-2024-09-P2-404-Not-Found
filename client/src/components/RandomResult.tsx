@@ -44,7 +44,53 @@ function Result() {
 
     getRecipes();
   }, []);
+  // fonction pour chercher la recette sur youtube
+  function generateYouTubeSearchUrl(mealName: string): string {
+    return `https://www.youtube.com/results?search_query=${encodeURIComponent(mealName)}+recipe`;
+  }
+  //   explications:la fonction generateurlyoutube...  a en paramètre le nom d'un plat, typé string.
+  //   -https://www.youtube.com/results?search_query= --> base d'url pour recherche youtube
+  // -${encodeURIComponent(mealName)} --> fonction qui transforme le nom du plat en une chaine de caractères, sans espaces ou caractères spéciaux : ex:convertit les espaces en + ( spagetti carbo=> spagetti+carbo)
+  // -concatène recipe pour chercher des recettes spécifiques sur youtube
+
   //   console.log(recipes);
+  // return (
+  //   <>
+  //     <section className="containerRandom">
+  //       <h2> Random dishes </h2>
+  //       <article className="containerimg">
+  //         <img className="image" src={Chef} alt="Chef Icon" />
+  //       </article>
+  //     </section>
+  //     <div className="recipes-container">
+  //       <div className="recipe-cards">
+  //         {recipes.map((recipe) => (
+  //           <div className="recipe-card" key={recipe.idMeal}>
+  //             <img
+  //               src={recipe.strMealThumb}
+  //               alt={recipe.strMeal}
+  //               className="recipe-image"
+  //             />
+  //             <h3>{recipe.strMeal}</h3>
+  //             {/* button reliant vers une video youtube  */}
+  //             {recipe.strMeal && (
+  //             <a
+  //               href={`https://www.youtube.com/results?search_query=${encodeURIComponent(recipe.strMeal)+recipe`}
+  //               target="_blank"
+  //               rel='noopener noreferrer"
+  //               className="recipe-boutton"
+  //             >
+  //             Seach on youtube
+  //              </a>
+  //               )}
+  //           </div>
+  //         ))}
+  //       </div>
+  //     </div>
+  //   </>
+  // );
+  //               }
+
   return (
     <>
       <section className="containerRandom">
@@ -69,6 +115,27 @@ function Result() {
                   <article className="sectiontexte">
                     <h3>{recipe.strMeal}</h3>
                   </article>
+                  <a
+                    href={generateYouTubeSearchUrl(recipe.strMeal)}
+                    //   boutton recherche youtube explications : appelle la fonction qui
+                    // genere l'url en lui donnant à manger le nom du plat.
+                    target="_blank" //ouvre un nouvel onglet dans le navigateur
+                    rel="noopener noreferrer" //pour la sécurité
+                    className="recipe-button"
+                  >
+                    ▶️𝚈𝚘𝚞𝚝𝚞𝚋𝚎
+                  </a>
+                  {/* boutton de rechercher vers youtube à afficher à chaque card 
+              <a
+                href={`https://www.youtube.com/results?search_query=${encodeURIComponent(
+                  recipe.strMeal,
+                )}+recipe`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="recipe-button"
+              >
+                Search on YouTube
+              </a> */}
                 </section>
               </div>
             ))}

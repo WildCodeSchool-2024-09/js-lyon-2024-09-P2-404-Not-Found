@@ -40,6 +40,10 @@ function Country() {
                 value={selectCountry}
                 onChange={(e) => setSelectCountry(e.target.value)}
               >
+                {/* value-->"" à l'état initial de la liste deroulante d'ingredients permetant de le selectionner, disabled --> non selectionnable dans cette liste  */}
+                <option value="">Please choose your Country 🌎</option>
+                {/* fin */}
+
                 {country !== null &&
                   country.length > 0 &&
                   country.map((element) => (
