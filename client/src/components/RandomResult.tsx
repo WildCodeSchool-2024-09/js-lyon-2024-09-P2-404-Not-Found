@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import "../styles/Result2.css";
 import "../styles/RandomResult.css";
 import Chef from "../images/logo-chef.png";
-import "../styles/Ingredient.css";
 
 // Typage
 type Meal = {
@@ -100,29 +100,32 @@ function Result() {
         </article>
       </section>
       <div className="recipes-container">
-        <div className="recipe-cards">
-          {recipes.map((recipe) => (
-            <div className="recipe-card" key={recipe.idMeal}>
-              {/* affiche image de la recette  */}
-              <img
-                src={recipe.strMealThumb}
-                alt={recipe.strMeal}
-                className="recipe-image"
-              />
-              {/* affiche le nom de la recette  */}
-              <h3>{recipe.strMeal}</h3>
-
-              <a
-                href={generateYouTubeSearchUrl(recipe.strMeal)}
-                //   boutton recherche youtube explications : appelle la fonction qui
-                // genere l'url en lui donnant à manger le nom du plat.
-                target="_blank" //ouvre un nouvel onglet dans le navigateur
-                rel="noopener noreferrer" //pour la sécurité
-                className="recipe-button"
-              >
-                ▶️𝚈𝚘𝚞𝚝𝚞𝚋𝚎
-              </a>
-              {/* boutton de rechercher vers youtube à afficher à chaque card 
+        <section>
+          <div className="recipe-cards">
+            {recipes.map((recipe) => (
+              <div className="cards-container" key={recipe.idMeal}>
+                <section className="card">
+                  <div className="sectionimage">
+                    <img
+                      src={recipe.strMealThumb}
+                      alt={recipe.strMeal}
+                      className="card-image"
+                    />
+                  </div>
+                  <article className="sectiontexte">
+                    <h3>{recipe.strMeal}</h3>
+                  </article>
+                  <a
+                    href={generateYouTubeSearchUrl(recipe.strMeal)}
+                    //   boutton recherche youtube explications : appelle la fonction qui
+                    // genere l'url en lui donnant à manger le nom du plat.
+                    target="_blank" //ouvre un nouvel onglet dans le navigateur
+                    rel="noopener noreferrer" //pour la sécurité
+                    className="recipe-button"
+                  >
+                    ▶️𝚈𝚘𝚞𝚝𝚞𝚋𝚎
+                  </a>
+                  {/* boutton de rechercher vers youtube à afficher à chaque card 
               <a
                 href={`https://www.youtube.com/results?search_query=${encodeURIComponent(
                   recipe.strMeal,
@@ -133,9 +136,11 @@ function Result() {
               >
                 Search on YouTube
               </a> */}
-            </div>
-          ))}
-        </div>
+                </section>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </>
   );

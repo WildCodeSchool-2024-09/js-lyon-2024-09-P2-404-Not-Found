@@ -1,7 +1,7 @@
 import "../styles/Ingredient.css";
 import "../styles/question.css";
-import { useState } from "react";
 import "../styles/Result2.css";
+import { useState } from "react";
 import Ingredient from "../components/Ingredients";
 import Result2 from "../components/Result2";
 

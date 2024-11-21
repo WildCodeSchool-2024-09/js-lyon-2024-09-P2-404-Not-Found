@@ -1,6 +1,6 @@
 import "../styles/nav.css";
 import { Link } from "react-router-dom";
-import Logo from "../images/logofrigo.png";
+import Logo from "../images/Cook'in-logo.png";
 
 function Nav() {
   return (
@@ -11,7 +11,9 @@ function Nav() {
             <img src={Logo} alt="logo" />
           </Link>
           <p>
-            <Link to="/about">About</Link>
+            <Link to="/about" className="about-link">
+              About
+            </Link>
           </p>
         </section>
       </nav>
