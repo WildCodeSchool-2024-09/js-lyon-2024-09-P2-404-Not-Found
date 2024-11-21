@@ -1,4 +1,6 @@
+// import { useState } from "react";
 import "../styles/Result2.css";
+// import Recipe from "./Recipe";
 
 interface Item {
   strMeal: string;
@@ -6,7 +8,6 @@ interface Item {
   idMeal: string;
 }
 
-//faire le fech et remplacer tab par le resultat du fetch
 const tab: Item[] = [
   {
     strMeal: "glace",
@@ -34,29 +35,56 @@ const tab: Item[] = [
   },
 ];
 
+// interface RecipeProps {
+// 	meals: {
+// 		idMeal: string;
+// 		strMeal: string;
+// 		strMealThumb: string;
+// 		strIngredient: string;
+// 		strMeasure: string;
+// 		strInstructions: string;
+// 		strArea: string;
+// 	};
+// }
+
 function Result2() {
+  // const [popup, setPopup] = useState(false);
+  // const [recipesInfo, setRecipesInfo] = useState<
+  //   RecipeProps["meals"] | null | undefined
+  // >();
+
+  function HandleClick() {
+    // setPopup(true);
+    // fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setRecipesInfo(data.meals);
+    //   });
+  }
   return (
-    <div>
+    <>
       {tab.map((item) => (
-        <div className="cards-container" key={item.idMeal}>
-          {/* mettre le fond blanc sur le contener le plus gros */}
-          <section className="card">
-            {" "}
-            {/* mettre l'id fournit par l apl*/}
-            <article className="sectionimage">
-              <img
-                src={item.strMealThumb}
-                alt={item.idMeal}
-                className="card-image"
-              />
-            </article>
-            <article className="sectiontexte">
-              <h3>{item.strMeal}</h3>
-            </article>
-          </section>
-        </div>
+        <button type="button" onClick={HandleClick} key={item.idMeal}>
+          <div className="cards-container" key={item.idMeal}>
+            <section className="card">
+              <article className="sectionimage">
+                <img
+                  src={item.strMealThumb}
+                  alt={item.idMeal}
+                  className="card-image"
+                />
+              </article>
+              <article className="sectiontexte">
+                <h3>{item.strMeal}</h3>
+              </article>
+            </section>
+          </div>
+        </button>
       ))}
-    </div>
+      {/* Faire en sorte que Recipe ne s'affiche que si Trigger est strictement True avec &&*/}
+      {/* ajouter a la ligne du dessous " recipesInfo={recipesInfo} " */}
+      {/* <Recipe trigger={popup} /> */}
+    </>
   );
 }
 
