@@ -1,4 +1,4 @@
-import Ingredient from "../components/Ingredients";
+import Ingredient from "../components/oldComponents/Ingredients";
 
 function PageIngredients() {
   return (
