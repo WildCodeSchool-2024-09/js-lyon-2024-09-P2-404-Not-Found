@@ -8,14 +8,11 @@ import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
 import PageIngredients from "./pages/PageIngredients.tsx";
 
-//  Temporaire, il faudra mettre chaque page Ingredient, Country, Random et Category comme children une fois crées
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      //1) selctionner les enfants pour le outlet
       {
         path: "/",
         element: <Home />,

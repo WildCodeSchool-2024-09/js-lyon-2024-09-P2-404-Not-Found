@@ -1,7 +1,12 @@
+@import url(../styles/index.css);
+
 nav {
+  background-color: var(--nav-color);
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
-  background-color: var(--nav-color);
   align-items: center;
   padding: 1vh;
 }
@@ -9,6 +14,14 @@ nav {
 nav img {
   width: 12vw;
   border-radius: 100px;
+  padding: 2em;
+}
+
+.navbar p {
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 1.5em;
+  color: white;
 }
 
 a {
@@ -21,5 +34,6 @@ a {
 @media screen and (min-width: 600px) {
   nav {
     padding: 5vh;
+    color: white;
   }
 }
