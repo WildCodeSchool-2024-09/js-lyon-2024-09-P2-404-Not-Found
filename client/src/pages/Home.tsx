@@ -14,7 +14,7 @@ function Home() {
   } else if (search === "Country") {
     navigate("/PageCountry");
   } else if (search === "Ingredient") {
-    navigate("/PageIngredient");
+    navigate("/PageIngredients");
   } else if (search === "Random") {
     navigate("/RandomResult");
   }

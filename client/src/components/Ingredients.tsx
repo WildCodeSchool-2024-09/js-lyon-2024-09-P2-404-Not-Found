@@ -12,8 +12,12 @@ interface dataProps {
   }[];
 }
 
-function Ingredient() {
-  const [selectedIngredient, setSelectedIngredient] = useState("");
+interface IngredientProps {
+  handleChange: React.Dispatch<React.ChangeEvent<HTMLSelectElement>>;
+  selectedIngredient?: string;
+}
+
+function Ingredient({ handleChange, selectedIngredient }: IngredientProps) {
   const [listIngredients, setListIngredients] = useState<
     dataProps["meals"] | null
   >(null);
@@ -43,7 +47,7 @@ function Ingredient() {
                 name="chooseIngredients"
                 className="choice"
                 value={selectedIngredient}
-                onChange={(e) => setSelectedIngredient(e.target.value)}
+                onChange={handleChange}
               >
                 {listIngredients !== null &&
                   listIngredients.length > 0 &&

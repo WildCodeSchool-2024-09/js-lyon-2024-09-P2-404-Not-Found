@@ -6,6 +6,7 @@ import Country from "./components/Country";
 import Result from "./components/RandomResult";
 import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
+import PageIngredients from "./pages/PageIngredients.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/RandomResult",
         element: <Result />,
+      },
+      {
+        path: "/PageIngredients",
+        element: <PageIngredients />,
       },
       {
         path: "/country",

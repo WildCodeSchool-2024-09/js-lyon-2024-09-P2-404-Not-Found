@@ -8,12 +8,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2em;
+  padding: 1vh;
 }
 
 nav img {
-  width: 20vh;
-  border-radius: 50%;
+  width: 12vw;
+  border-radius: 100px;
+  padding: 2em;
 }
 
 .navbar p {
@@ -25,5 +26,14 @@ nav img {
 
 a {
   text-decoration: none;
+  font-family: var(--main-font);
+  font-size: 1.2rem;
   color: white;
+}
+
+@media screen and (min-width: 600px) {
+  nav {
+    padding: 5vh;
+    color: white;
+  }
 }
