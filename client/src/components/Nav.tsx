@@ -1,6 +1,6 @@
 import "../styles/nav.css";
 import { Link } from "react-router-dom";
-import Logo from "../images/logofrigo.png";
+import Logo from "../images/Cook'in-logo.png";
 
 function Nav() {
   return (

@@ -1,3 +1,5 @@
+@import url(../styles/index.css);
+
 /* Section principale */
 .containerRandom {
   display: flex;
@@ -39,6 +41,10 @@
   display: flex;
   gap: 20px;
   flex-direction: column;
+}
+
+.recipes-back {
+  background-color: var(--third-color);
 }
 
 .recipe-card {
