@@ -12,15 +12,8 @@ interface ResultProps {
   selectCategory?: string;
 }
 
-function Result2({ selectedIngredient }: ResultProps) {
+function Result({ selectedIngredient }: ResultProps) {
   const [resultedList, setResultedList] = useState<Item["meals"] | null>(null);
-
-  // if (selectCountry !=== undefined) {
-  //   return `filter.php?a=${selectCountry}`
-  // }
-  // if (selectCategory !=== undefined) {
-  //   return `filter.php?c=${selectCategory}`
-  // }
 
   useEffect(() => {
     fetch(
@@ -58,4 +51,4 @@ function Result2({ selectedIngredient }: ResultProps) {
   );
 }
 
-export default Result2;
+export default Result;
