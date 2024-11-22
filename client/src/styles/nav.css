@@ -25,10 +25,3 @@ nav img {
   text-decoration: none;
   color: black;
 }
-
-@media screen and (min-width: 600px) {
-  nav {
-    padding: 3vh;
-    color: white;
-  }
-}

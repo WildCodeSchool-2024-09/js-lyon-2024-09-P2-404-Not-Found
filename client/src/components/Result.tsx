@@ -12,7 +12,7 @@ interface ResultProps {
   selectCategory?: string;
 }
 
-function Result2({ selectedIngredient }: ResultProps) {
+function Result({ selectedIngredient }: ResultProps) {
   const [resultedList, setResultedList] = useState<Item["meals"] | null>(null);
 
   useEffect(() => {
@@ -51,4 +51,4 @@ function Result2({ selectedIngredient }: ResultProps) {
   );
 }
 
-export default Result2;
+export default Result;
