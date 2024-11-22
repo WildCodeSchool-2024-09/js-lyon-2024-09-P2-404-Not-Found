@@ -2,13 +2,20 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5em;
+  align-items: center;
+  padding: 1rem;
+  min-height: 78vh;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 82vh;
+  }
+  nav {
+    padding: 0 8vh;
+    color: white;
   }
 }
