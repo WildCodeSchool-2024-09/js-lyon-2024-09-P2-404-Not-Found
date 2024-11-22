@@ -1,9 +1,6 @@
-import "../styles/Ingredient.css";
-import "../styles/question.css";
-import "../styles/Result2.css";
 import { useState } from "react";
 import Ingredient from "../components/Ingredients";
-import Result2 from "../components/Result2";
+import Result2 from "../components/Result";
 
 function PageIngredients() {
   const [selectedIngredient, setSelectedIngredient] = useState<string>();

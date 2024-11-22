@@ -40,7 +40,6 @@ function Category() {
               onChange={(e) => setSelectCategory(e.target.value)}
             >
               <option value="">Please choose your Category 🎯</option>
-              {/* fin */}
               {category !== null &&
                 category.length > 0 &&
                 category.map((element) => (

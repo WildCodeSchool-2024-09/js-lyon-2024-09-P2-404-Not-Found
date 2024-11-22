@@ -15,13 +15,6 @@ interface ResultProps {
 function Result2({ selectedIngredient }: ResultProps) {
   const [resultedList, setResultedList] = useState<Item["meals"] | null>(null);
 
-  // if (selectCountry !=== undefined) {
-  //   return `filter.php?a=${selectCountry}`
-  // }
-  // if (selectCategory !=== undefined) {
-  //   return `filter.php?c=${selectCategory}`
-  // }
-
   useEffect(() => {
     fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredient}`,
