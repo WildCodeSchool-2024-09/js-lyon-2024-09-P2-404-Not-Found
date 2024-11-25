@@ -1,37 +1,52 @@
 import "../../styles/Ingredient.css";
 import "../../styles/question.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import Chef from "../../images/logo-chef.png";
 
 interface dataProps {
   meals: {
     idIngredient: number;
-    strIngredient: string;
     strDescription: string;
     strType: string;
+    strIngredient: string;
+    strCategory: string;
+    strArea: string;
   }[];
 }
 
 interface IngredientProps {
   handleChange: React.Dispatch<React.ChangeEvent<HTMLSelectElement>>;
-  selectedIngredient?: string;
+  selectedType?: string;
+  type?: string;
 }
 
-function AnyChoice({ handleChange, selectedIngredient }: IngredientProps) {
-  const { type } = useParams();
-  const [listIngredients, setListIngredients] = useState<
-    dataProps["meals"] | null
-  >(null);
+function AnyChoice({ handleChange, selectedType, type }: IngredientProps) {
+  const [listChoices, setListChoices] = useState<dataProps["meals"] | null>(
+    null,
+  );
+
+  function homeChoice() {
+    if (type === "Country") {
+      return "a";
+    }
+    if (type === "Ingrédient") {
+      return "i";
+    }
+    if (type === "Category") {
+      return "c";
+    }
+  }
+
+  const homeSelection = homeChoice();
 
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=${type}`)
+    fetch(
+      `https://www.themealdb.com/api/json/v1/1/list.php?${homeSelection}=list`,
+    )
       .then((response) => response.json())
-      .then((data: dataProps) => {
-        setListIngredients(data.meals);
-      })
+      .then((data: dataProps) => setListChoices(data.meals))
       .catch((err) => console.log(err));
-  }, [type]);
+  }, [homeSelection]);
 
   return (
     <>
@@ -42,23 +57,39 @@ function AnyChoice({ handleChange, selectedIngredient }: IngredientProps) {
           </div>
           <section>
             <article>
-              <h2>Choose your main ingredient to cook :</h2>
+              <h2>Choose your {type} to cook :</h2>
             </article>
             <article>
               <select
                 name="chooseIngredients"
                 className="choice"
-                value={selectedIngredient}
+                value={selectedType}
                 onChange={handleChange}
               >
-                {listIngredients !== null &&
-                  listIngredients.length > 0 &&
-                  listIngredients.map((ingredient) => (
+                {listChoices !== null &&
+                  listChoices.length > 0 &&
+                  listChoices.map((choice) => (
                     <option
-                      key={ingredient.idIngredient}
-                      value={ingredient.strIngredient}
+                      key={
+                        type === "Country"
+                          ? choice.strArea
+                          : type === "Ingrédient"
+                            ? choice.strIngredient
+                            : choice.strCategory
+                      }
+                      value={
+                        type === "Country"
+                          ? choice.strArea
+                          : type === "Ingrédient"
+                            ? choice.strIngredient
+                            : choice.strCategory
+                      }
                     >
-                      {ingredient.strIngredient}
+                      {type === "Country"
+                        ? choice.strArea
+                        : type === "Ingrédient"
+                          ? choice.strIngredient
+                          : choice.strCategory}
                     </option>
                   ))}
               </select>

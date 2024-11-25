@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/Home.css";
 import "../styles/question.css";
 import "../styles/Ingredient.css";
@@ -10,11 +10,11 @@ function Home() {
   const navigate = useNavigate();
 
   if (search === "Category") {
-    navigate("/PreferedChoice/:type");
+    navigate("/PreferedChoice/Category");
   } else if (search === "Country") {
-    navigate("/PreferedChoice/:type");
+    navigate("/PreferedChoice/Country");
   } else if (search === "Ingredient") {
-    navigate("/PreferedChoice/:type");
+    navigate("/PreferedChoice/Ingredient");
   } else if (search === "Random") {
     navigate("/RandomResult");
   }
@@ -32,19 +32,19 @@ function Home() {
             name="search-type"
             id="search-select"
           >
-            <option value="">Please choose search type</option>
-            <option value="Category">
-              <Link to="/PreferedChoice/:type">Category</Link>
+            <option value="" key="Home">
+              Please choose search type
             </option>
-            <option value="Country">
-              <Link to="/PreferedChoice/:type">Country</Link>
+            <option value="Category" key="Category">
+              Category
             </option>
-            <option value="Ingredient">
-              <Link to="/PreferedChoice/:type">Ingredient</Link>
+            <option value="Country" key="Country">
+              Country
             </option>
-            <option value="Random">
-              <Link to="/PreferedChoice/:type">Random</Link>
+            <option value="Ingredient" key="Ingredient">
+              Ingredient
             </option>
+            <option value="Random">Random</option>
           </select>
         </div>
       </div>

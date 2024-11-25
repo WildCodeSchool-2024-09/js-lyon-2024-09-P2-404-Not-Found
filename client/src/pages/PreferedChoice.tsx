@@ -2,22 +2,27 @@ import "../styles/Ingredient.css";
 import "../styles/question.css";
 import { useState } from "react";
 import "../styles/Result2.css";
+import { useParams } from "react-router-dom";
 import AnyAnswer from "../components/AllQuestions/AnyAnswer";
 import AnyChoice from "../components/AllQuestions/AnyChoice";
 
 function PreferedChoice() {
-  const [selectedIngredient, setSelectedIngredient] = useState<string>();
+  const [selectedType, setSelectedType] = useState<string>();
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedIngredient(event.target.value);
+    setSelectedType(event.target.value);
   };
+
+  const { type } = useParams();
+
   return (
     <>
       <AnyChoice
+        type={type}
         handleChange={handleChange}
-        selectedIngredient={selectedIngredient}
+        selectedType={selectedType}
       />
-      <AnyAnswer selectedIngredient={selectedIngredient} />
+      <AnyAnswer selectedType={selectedType} type={type} />
     </>
   );
 }

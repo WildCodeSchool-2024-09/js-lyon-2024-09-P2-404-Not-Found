@@ -6,31 +6,39 @@ interface Item {
 }
 
 interface ResultProps {
-  selectedIngredient?: string;
+  selectedType?: string;
   selectCountry?: string;
   selectCategory?: string;
+  type?: string;
 }
 
-function AnyAnswer({ selectedIngredient }: ResultProps) {
+function AnyAnswer({ selectedType, type }: ResultProps) {
   const [resultedList, setResultedList] = useState<Item["meals"] | null>(null);
 
-  // if (selectCountry !=== undefined) {
-  //   return `filter.php?a=${selectCountry}`
-  // }
-  // if (selectCategory !=== undefined) {
-  //   return `filter.php?c=${selectCategory}`
-  // }
+  function homeChoice() {
+    if (type === "Country") {
+      return "a";
+    }
+    if (type === "Ingrédient") {
+      return "i";
+    }
+    if (type === "Category") {
+      return "c";
+    }
+  }
+
+  const homeSelection = homeChoice();
 
   useEffect(() => {
     fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredient}`,
+      `https://www.themealdb.com/api/json/v1/1/filter.php?${homeSelection}=${selectedType}`,
     )
       .then((response) => response.json())
       .then((data: Item) => {
         setResultedList(data.meals);
       })
       .catch((err) => console.log(err));
-  }, [selectedIngredient]);
+  }, [selectedType, homeSelection]);
 
   return (
     <div>
