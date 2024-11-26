@@ -19,7 +19,7 @@ function AnyAnswer({ selectedType, type }: ResultProps) {
     if (type === "Country") {
       return "a";
     }
-    if (type === "Ingrédient") {
+    if (type === "Ingredient") {
       return "i";
     }
     if (type === "Category") {

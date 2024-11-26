@@ -29,7 +29,7 @@ function AnyChoice({ handleChange, selectedType, type }: IngredientProps) {
     if (type === "Country") {
       return "a";
     }
-    if (type === "Ingrédient") {
+    if (type === "Ingredient") {
       return "i";
     }
     if (type === "Category") {
@@ -73,21 +73,21 @@ function AnyChoice({ handleChange, selectedType, type }: IngredientProps) {
                       key={
                         type === "Country"
                           ? choice.strArea
-                          : type === "Ingrédient"
+                          : type === "Ingredient"
                             ? choice.strIngredient
                             : choice.strCategory
                       }
                       value={
                         type === "Country"
                           ? choice.strArea
-                          : type === "Ingrédient"
+                          : type === "Ingredient"
                             ? choice.strIngredient
                             : choice.strCategory
                       }
                     >
                       {type === "Country"
                         ? choice.strArea
-                        : type === "Ingrédient"
+                        : type === "Ingredient"
                           ? choice.strIngredient
                           : choice.strCategory}
                     </option>
