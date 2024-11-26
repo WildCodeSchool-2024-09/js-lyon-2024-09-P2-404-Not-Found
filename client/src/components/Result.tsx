@@ -1,4 +1,4 @@
-import "../styles/Result2.css";
+import "../styles/Result.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 
@@ -27,7 +27,7 @@ function Result({ selectedIngredient }: ResultProps) {
   }, [selectedIngredient]);
 
   return (
-    <div>
+    <div className="result-container">
       {resultedList !== null &&
         resultedList.length > 0 &&
         resultedList.map((result) => (
