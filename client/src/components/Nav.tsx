@@ -12,6 +12,8 @@ function Nav() {
           </Link>
           <p>
             <Link to="/about">About</Link>
+            {/* ajout à favorite */}
+            <Link to="/favorites"> Favorite</Link>
           </p>
         </section>
       </nav>
