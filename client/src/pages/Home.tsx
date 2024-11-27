@@ -10,11 +10,11 @@ function Home() {
   const navigate = useNavigate();
 
   if (search === "Category") {
-    navigate("/PageCategory");
+    navigate("/PreferedChoice/Category");
   } else if (search === "Country") {
-    navigate("/PageCountry");
+    navigate("/PreferedChoice/Country");
   } else if (search === "Ingredient") {
-    navigate("/PageIngredients");
+    navigate("/PreferedChoice/Ingredient");
   } else if (search === "Random") {
     navigate("/RandomResult");
   }
@@ -32,10 +32,18 @@ function Home() {
             name="search-type"
             id="search-select"
           >
-            <option value="">Please choose search type</option>
-            <option value="Category">Category</option>
-            <option value="Country">Country</option>
-            <option value="Ingredient">Ingredient</option>
+            <option value="" key="Home">
+              Please choose search type
+            </option>
+            <option value="Category" key="Category">
+              Category
+            </option>
+            <option value="Country" key="Country">
+              Country
+            </option>
+            <option value="Ingredient" key="Ingredient">
+              Ingredient
+            </option>
             <option value="Random">Random</option>
           </select>
         </div>

@@ -2,17 +2,16 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Country from "./components/Country";
-import Favorites from "./components/Favorites.tsx";
-import Result from "./components/RandomResult";
 import About from "./pages/About.tsx";
+import Favorites from "./pages/Favorites.tsx";
 import Home from "./pages/Home.tsx";
-import PageIngredients from "./pages/PageIngredients.tsx";
+import PreferedChoice from "./pages/PreferedChoice.tsx";
+import RandomResult from "./pages/RandomResult.tsx";
 
 const router = createBrowserRouter([
   // router contient en paramètre un tableau avec la liste des routes
   // object à afficher est path/avec l'element à afficher
-  // pour eviter de repeter des parties de pages = app contzeitn tout ce qui se repete et
+  // pour eviter de repeter des parties de pages = app contient tout ce qui se repete et
   // outlet contient la partie qui va varier
   // dans la div id route dans le html on affiche la page voulue.
   //pour toutes les page du site afficher app et/ peut etre les children si besoin grâce à OUTLET
@@ -28,17 +27,14 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+
       {
         path: "/RandomResult",
-        element: <Result />,
+        element: <RandomResult />,
       },
       {
-        path: "/PageIngredients",
-        element: <PageIngredients />,
-      },
-      {
-        path: "/country",
-        element: <Country />,
+        path: "/PreferedChoice/:type",
+        element: <PreferedChoice />,
       },
       //nouvelle route pour les favoris lea
       {

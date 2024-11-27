@@ -1,11 +1,10 @@
 import "../styles/Result.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
-import Chef from "../images/logo-chef.png";
-
 import { ToastContainer } from "react-toastify";
+import Recipe from "../components/Features/Recipe";
+import Chef from "../images/logo-chef.png";
 import "react-toastify/dist/ReactToastify.css";
-import addToFavorites from "../utils/HandleFavorites";
 
 type Meal = {
   idMeal: string;
@@ -40,6 +39,15 @@ function Result() {
     getresults();
   }, []);
 
+  // Ceci pour seulement afficher la recette
+  const [popup, setPopup] = useState(false);
+  const [choosenRecipe, setChoosenRecipe] = useState<string>("");
+
+  const handleClick = (idOfMeal: string) => {
+    setChoosenRecipe(idOfMeal);
+    setPopup(true);
+  };
+
   return (
     <>
       <section className="Questioncontainer">
@@ -58,24 +66,33 @@ function Result() {
         {results.map((result) => (
           <div className="cards-container" key={result.idMeal}>
             <section className="card">
-              <article className="sectionimage">
-                <img
-                  src={result.strMealThumb}
-                  alt={result.strMeal}
-                  className="card-image"
-                />
-              </article>
+              <button
+                type="button"
+                onClick={() => handleClick(result.idMeal)}
+                className="recipe-btn"
+              >
+                <article className="sectionimage">
+                  <img
+                    src={result.strMealThumb}
+                    alt={result.strMeal}
+                    className="card-image"
+                  />
+                </article>
+              </button>
               <article className="sectiontexte">
                 <h3>{result.strMeal}</h3>
-                {/* boutton favorite */}
-                <button type="button" onClick={() => addToFavorites(result)}>
-                  ❤️ Add to favorite
-                </button>
                 <Rating fillColor="#FFA500" emptyColor="#ffffffcf" />
               </article>
             </section>
           </div>
         ))}
+        {popup === true && (
+          <Recipe
+            trigger={popup}
+            setTrigger={setPopup}
+            choosenRecipe={choosenRecipe}
+          />
+        )}
       </div>
     </>
   );
