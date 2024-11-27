@@ -66,6 +66,7 @@ function AnyChoice({ handleChange, selectedType, type }: IngredientProps) {
                 value={selectedType}
                 onChange={handleChange}
               >
+                <option value="">Please choose your {type} </option>
                 {listChoices !== null &&
                   listChoices.length > 0 &&
                   listChoices.map((choice) => (

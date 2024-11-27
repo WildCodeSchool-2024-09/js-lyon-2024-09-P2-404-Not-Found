@@ -13,7 +13,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 30em;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 2s ease forwards;

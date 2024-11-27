@@ -20,6 +20,7 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+
       {
         path: "/RandomResult",
         element: <RandomResult />,
