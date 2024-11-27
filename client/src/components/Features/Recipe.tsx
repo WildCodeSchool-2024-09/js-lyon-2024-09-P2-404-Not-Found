@@ -106,9 +106,13 @@ function Recipe({ trigger, setTrigger, choosenRecipe }: RecipeProps) {
                 </div>
               </article>
             </section>
-            <div>
+            <div className="recipe-btns">
               <Youtube recipeName={recipesInfo.strMeal} />
-              <button type="button" onClick={() => addToFavorites(recipesInfo)}>
+              <button
+                type="button"
+                className="favorit-btn"
+                onClick={() => addToFavorites(recipesInfo)}
+              >
                 ❤️ Add to favorite
               </button>
             </div>

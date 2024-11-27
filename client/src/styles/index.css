@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --main-color: #f5b93f;
   --nav-color: #f5b93f;
   --secondary-color: #ffa64c87;
   --third-color: #ffffffd0;
@@ -43,5 +42,10 @@ h3 {
 }
 
 p {
+  font-family: var(--main-font);
+}
+
+a {
+  text-decoration: none;
   font-family: var(--main-font);
 }

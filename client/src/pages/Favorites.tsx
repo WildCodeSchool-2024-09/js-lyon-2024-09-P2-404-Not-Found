@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { Rating } from "react-simple-star-rating";
 import Recipe from "../components/Features/Recipe";
+import "../styles/Recipe.css";
 
 type Meal = {
   idMeal: string;
@@ -59,10 +61,12 @@ function Favorites() {
                 </button>
                 <article className="sectiontexte">
                   <h3>{meal.strMeal}</h3>
+                  <Rating fillColor="#FFA500" emptyColor="#ffffffcf" />
                 </article>
                 <button
                   type="button"
                   onClick={() => removeFavorite(meal.idMeal)}
+                  className="remove-btn"
                 >
                   Remove
                 </button>

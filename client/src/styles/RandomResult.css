@@ -84,16 +84,3 @@
   color: #333;
   font-family: var(--title-font);
 }
-/* bouton pour aller sur youtube  */
-.recipe-button {
-  padding: 10px 15px;
-  background-color: orange;
-  color: white;
-
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.recipe-button:hover {
-  background-color: green;
-}

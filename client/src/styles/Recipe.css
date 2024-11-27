@@ -79,3 +79,42 @@ li {
 .text-instr {
   font-size: 20px;
 }
+
+.recipe-btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.favorit-btn {
+  padding: 10px 15px;
+  background-color: var(--nav-color);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+}
+
+.recipe-button {
+  padding: 10px 15px;
+  background-color: var(--nav-color);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+}
+
+.recipe-button:hover,
+.favorit-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.remove-btn {
+  padding: 10px 15px;
+  background-color: var(--nav-color);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+}

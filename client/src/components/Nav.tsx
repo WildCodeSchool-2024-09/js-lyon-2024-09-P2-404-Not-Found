@@ -5,15 +5,20 @@ import Logo from "../images/Cook'in-logo.png";
 function Nav() {
   return (
     <section className="navbar">
-      <Link to="/">
-        <img src={Logo} alt="logo" />
+      <Link to="/" className="about-link">
+        <img src={Logo} alt="logo" className="logo" />
       </Link>
       <p>
-        <Link to="/about">About</Link>
+        <Link to="/about" className="about-link">
+          About
+        </Link>
       </p>
       <p>
         {/* ajout à favorite */}
-        <Link to="/favorites"> Favorite</Link>
+        <Link to="/favorites" className="about-link">
+          {" "}
+          Favorite
+        </Link>
       </p>
     </section>
   );
