@@ -29,10 +29,9 @@ function Recipe({ trigger, setTrigger, choosenRecipe }: RecipeProps) {
       .then((data) => {
         const listIngredients = [];
         for (let i = 1; i < 21; i++) {
-          const ingredientField = `strIngredient${i}`;
           const measureField = `strMeasure${i}`;
           const itemToPush = {
-            name: data.meals[0][ingredientField],
+            name: data.meals[0][`strIngredient${i}`],
             measure: data.meals[0][measureField],
           };
           if (
