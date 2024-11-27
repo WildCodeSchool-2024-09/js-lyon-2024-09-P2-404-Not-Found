@@ -1,8 +1,10 @@
 import "../styles/Result.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
+import { ToastContainer } from "react-toastify";
 import Recipe from "../components/Features/Recipe";
 import Chef from "../images/logo-chef.png";
+import "react-toastify/dist/ReactToastify.css";
 
 type Meal = {
   idMeal: string;
@@ -28,6 +30,7 @@ function Result() {
       Promise.all(resultPromises) //promesses resolues--> promiseall retourne une promesse unique pour toutes sous forme d'un tableau de résultat
         //quand toutes les promesses du tableau result promesses sont terminées.
         .then((meals) => setresults(meals))
+
         .catch((error) => {
           console.error("Erreur de récupération des données recettes:", error);
         });
@@ -57,6 +60,8 @@ function Result() {
           </article>
         </div>
       </section>
+      <ToastContainer position="bottom-right" />
+      {/* <ToastContainer /> gère l'affichage des toast et doit être present une fois dans le composant racine ou dans le composant qui affiche les toasts.  */}
       <div className="result-container">
         {results.map((result) => (
           <div className="cards-container" key={result.idMeal}>

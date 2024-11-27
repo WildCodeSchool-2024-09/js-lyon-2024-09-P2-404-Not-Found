@@ -1,5 +1,6 @@
 import "../../styles/Recipe.css";
 import { useEffect, useState } from "react";
+import addToFavorites from "../../utils/HandleFavorites";
 import Youtube from "./Youtube";
 
 interface RecipeProps {
@@ -107,6 +108,9 @@ function Recipe({ trigger, setTrigger, choosenRecipe }: RecipeProps) {
             </section>
             <div>
               <Youtube recipeName={recipesInfo.strMeal} />
+              <button type="button" onClick={() => addToFavorites(recipesInfo)}>
+                ❤️ Add to favorite
+              </button>
             </div>
           </section>
         )}
