@@ -1,8 +1,11 @@
 @import url(../styles/index.css);
 
+@import url(../styles/index.css);
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Pour inclure padding et border dans la taille totale */
 }
 
 .footer {
@@ -10,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3em;
+  height: auto; /* Laisser auto pour s'adapter au contenu */
   width: 100%;
   padding: 1rem;
   text-align: center;
@@ -19,18 +22,17 @@
 .footer p {
   font-family: var(--main-font);
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: 1rem; /* Utiliser rem pour l'échelle */
 }
 
 @media (min-width: 768px) {
   .footer {
     display: none;
-    width: 100%;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1080px) {
+/* @media (min-width: 769px) and (max-width: 1080px) {
   .footer {
     width: 100vw;
   }
-}
+} */
