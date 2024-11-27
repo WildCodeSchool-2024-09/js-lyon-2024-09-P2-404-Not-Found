@@ -2,8 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Country from "./components/Country";
-import Result from "./components/RandomResult";
+import RandomResult from "./components/RandomResult";
 import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
 import PageIngredients from "./pages/PageIngredients.tsx";
@@ -21,17 +20,14 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+
       {
         path: "/RandomResult",
-        element: <Result />,
+        element: <RandomResult />,
       },
       {
         path: "/PageIngredients",
         element: <PageIngredients />,
-      },
-      {
-        path: "/country",
-        element: <Country />,
       },
     ],
   },

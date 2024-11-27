@@ -1,10 +1,7 @@
 import "../styles/Result.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
-
-interface Item {
-  meals: { strMeal: string; strMealThumb: string; idMeal: string }[];
-}
+import Recipe from "./Recipe";
 
 interface ResultProps {
   selectedIngredient?: string;
@@ -12,19 +9,41 @@ interface ResultProps {
   selectCategory?: string;
 }
 
-function Result({ selectedIngredient }: ResultProps) {
-  const [resultedList, setResultedList] = useState<Item["meals"] | null>(null);
+interface RecipeProps {
+  meals: {
+    idMeal: string;
+    strMeal: string;
+    strMealThumb: string;
+    strIngredient: string;
+    strMeasure: string;
+    strInstructions: string;
+    strArea: string;
+  }[];
+}
 
+function Result({ selectedIngredient }: ResultProps) {
+  const [resultedList, setResultedList] = useState<RecipeProps["meals"] | null>(
+    null,
+  );
   useEffect(() => {
     fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredient}`,
     )
       .then((response) => response.json())
-      .then((data: Item) => {
+      .then((data: RecipeProps) => {
         setResultedList(data.meals);
       })
       .catch((err) => console.log(err));
   }, [selectedIngredient]);
+
+  // Ceci pour seulement afficher la recette
+  const [popup, setPopup] = useState(false);
+  const [choosenRecipe, setChoosenRecipe] = useState<string>("");
+
+  const handleClick = (idOfMeal: string) => {
+    setChoosenRecipe(idOfMeal);
+    setPopup(true);
+  };
 
   return (
     <div className="result-container">
@@ -33,13 +52,15 @@ function Result({ selectedIngredient }: ResultProps) {
         resultedList.map((result) => (
           <div className="cards-container" key={result.idMeal}>
             <section className="card">
-              <article className="sectionimage">
-                <img
-                  src={result.strMealThumb}
-                  alt={result.idMeal}
-                  className="card-image"
-                />
-              </article>
+              <button type="button" onClick={() => handleClick(result.idMeal)}>
+                <article className="sectionimage">
+                  <img
+                    src={result.strMealThumb}
+                    alt={result.idMeal}
+                    className="card-image"
+                  />
+                </article>
+              </button>
               <article className="sectiontexte">
                 <h3>{result.strMeal}</h3>
                 <Rating fillColor="#FFA500" emptyColor="#ffffffcf" />
@@ -47,6 +68,13 @@ function Result({ selectedIngredient }: ResultProps) {
             </section>
           </div>
         ))}
+      {popup === true && (
+        <Recipe
+          trigger={popup}
+          setTrigger={setPopup}
+          choosenRecipe={choosenRecipe}
+        />
+      )}
     </div>
   );
 }
