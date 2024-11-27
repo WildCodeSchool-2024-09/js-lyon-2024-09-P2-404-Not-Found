@@ -5,8 +5,9 @@
   background-color: var(--third-color);
   border-radius: 20px;
   text-align: center;
-  margin-top: 3em;
   padding: 1em;
+  width: 100%;
+  margin: 3em 1em 1em 1em;
 }
 
 .inside {
@@ -42,10 +43,10 @@
   .whoAreWe,
   .history {
     padding: 2em;
+    max-width: 50%;
   }
 
   .creators {
-    flex-wrap: nowrap;
     justify-content: space-around;
   }
 
@@ -70,7 +71,6 @@
   }
 
   .history p {
-    padding: 0 10em;
     font-size: 1.2em;
   }
 }

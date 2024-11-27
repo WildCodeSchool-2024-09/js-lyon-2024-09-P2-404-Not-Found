@@ -17,13 +17,13 @@ const profilCreator = [
     creatorName: "Michaël",
     id: 3,
     creatorPost: "Developper",
-    creatorImg: "src/images/remi.jpg",
+    creatorImg: "src/images/alfredo.jpg",
   },
   {
     creatorName: "Léa",
     id: 4,
     creatorPost: "Developper",
-    creatorImg: "src/images/skinner.jpg",
+    creatorImg: "src/images/remi.jpg",
   },
 ];
 

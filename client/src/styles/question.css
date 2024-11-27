@@ -1,9 +1,13 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
 .Questioncontainer {
   background-color: var(--third-color);
   border-radius: 20px;
-  margin-bottom: 10px;
-  margin-top: 60px;
-  margin-right: 10em;
 }
 
 .inside-question {
@@ -15,8 +19,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  width: 40rem;
   height: 10rem;
+  width: 40em;
 }
 
 .anwser {
@@ -42,7 +46,13 @@
   border: 1px solid #ccc;
 }
 
+@media (min-width: 769px) and (max-width: 1080px) {
+  .Questioncontainer {
+    margin-left: 4em;
+  }
+}
 /* MédiaQueries pour écrans inférieurs à 768px */
+
 @media (max-width: 768px) {
   .Questioncontainer {
     margin-bottom: 8px;
@@ -54,7 +64,7 @@
   .inside-question {
     flex-direction: row;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     padding: 1rem;
