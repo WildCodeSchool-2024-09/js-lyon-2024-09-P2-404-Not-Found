@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Recipe from "../components/Features/Recipe";
 
 type Meal = {
   idMeal: string;
@@ -25,6 +26,14 @@ function Favorites() {
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
 
+  const [popup, setPopup] = useState(false);
+  const [choosenRecipe, setChoosenRecipe] = useState<string>("");
+
+  const handleClick = (idOfMeal: string) => {
+    setChoosenRecipe(idOfMeal);
+    setPopup(true);
+  };
+
   return (
     <div>
       <h1>Your Favorite Dishes</h1>
@@ -33,14 +42,40 @@ function Favorites() {
       ) : (
         <div>
           {favorites.map((meal) => (
-            <div key={meal.idMeal}>
-              <img src={meal.strMealThumb} alt={meal.strMeal} />
-              <h3>{meal.strMeal}</h3>
-              <button type="button" onClick={() => removeFavorite(meal.idMeal)}>
-                Remove
-              </button>
+            <div className="cards-container" key={meal.idMeal}>
+              <section className="card">
+                <button
+                  type="button"
+                  onClick={() => handleClick(meal.idMeal)}
+                  className="recipe-btn"
+                >
+                  <article className="sectionimage">
+                    <img
+                      src={meal.strMealThumb}
+                      alt={meal.strMeal}
+                      className="card-image"
+                    />
+                  </article>
+                </button>
+                <article className="sectiontexte">
+                  <h3>{meal.strMeal}</h3>
+                </article>
+                <button
+                  type="button"
+                  onClick={() => removeFavorite(meal.idMeal)}
+                >
+                  Remove
+                </button>
+              </section>
             </div>
           ))}
+          {popup === true && (
+            <Recipe
+              trigger={popup}
+              setTrigger={setPopup}
+              choosenRecipe={choosenRecipe}
+            />
+          )}
         </div>
       )}
     </div>
