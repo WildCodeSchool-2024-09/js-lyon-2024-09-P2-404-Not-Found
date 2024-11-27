@@ -7,6 +7,8 @@
   text-align: center;
   margin-top: 3em;
   padding: 1em;
+  width: 100%;
+  margin: 1em;
 }
 
 .inside {
@@ -42,6 +44,7 @@
   .whoAreWe,
   .history {
     padding: 2em;
+    margin-left: 22em;
   }
 
   .creators {

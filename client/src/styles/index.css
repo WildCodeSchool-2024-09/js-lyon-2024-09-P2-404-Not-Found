@@ -16,10 +16,8 @@ body {
   background-image: url("../images/background-spoon.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 h1,

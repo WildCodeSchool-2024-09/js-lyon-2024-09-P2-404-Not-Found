@@ -11,6 +11,9 @@
   justify-content: center;
   align-items: center;
   height: 3em;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
 }
 
 .footer p {
@@ -22,5 +25,12 @@
 @media (min-width: 768px) {
   .footer {
     display: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1080px) {
+  .footer {
+    width: 100vw;
   }
 }
