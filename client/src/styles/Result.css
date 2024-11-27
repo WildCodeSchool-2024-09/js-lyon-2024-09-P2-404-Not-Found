@@ -11,9 +11,9 @@
 .result-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  width: 30em;
   justify-content: center;
   align-items: center;
-  width: 30em;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 2s ease forwards;
@@ -133,6 +133,7 @@
 
 @media (min-width: 769px) and (max-width: 1080px) {
   .result-container {
-    padding-left: 20em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
