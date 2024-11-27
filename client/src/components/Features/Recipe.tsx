@@ -1,5 +1,6 @@
-import "../styles/Recipe.css";
+import "../../styles/Recipe.css";
 import { useEffect, useState } from "react";
+import Youtube from "./Youtube";
 
 interface RecipeProps {
   trigger: boolean;
@@ -70,30 +71,42 @@ function Recipe({ trigger, setTrigger, choosenRecipe }: RecipeProps) {
           X
         </button>
         {recipesInfo && (
-          <section>
+          <section className="recipe-introduction">
             <h1>{recipesInfo.strMeal}</h1>
-            <img
-              src={recipesInfo.strMealThumb}
-              alt={recipesInfo.strMeal}
-              className="recipe-image"
-            />
-            <h2>Category: {recipesInfo.strCategory}</h2>
-
+            <section className="recipe-presentation">
+              <div className="recipe-view">
+                <img
+                  src={recipesInfo.strMealThumb}
+                  alt={recipesInfo.strMeal}
+                  className="recipe-image"
+                />
+                <div>
+                  <h3>Instructions</h3>
+                  <p className="text-instr">{recipesInfo.strInstructions}</p>
+                </div>
+              </div>
+              <article className="recipe-description">
+                <div className="recipe-origine">
+                  <h3>Category: </h3>
+                  <p>{recipesInfo.strCategory}</p>
+                  <h3>Country: </h3>
+                  <p>{recipesInfo.strArea}</p>
+                </div>
+                <div>
+                  <h3>Ingredients:</h3>
+                  <ul className="listingd">
+                    {ingredients.map((item, index) => (
+                      // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                      <li key={index}>
+                        {item.ingredient} - {item.measure}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            </section>
             <div>
-              <h2>Ingredients:</h2>
-              <ul className="listingd">
-                {ingredients.map((item, index) => (
-                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                  <li key={index}>
-                    {item.ingredient} - {item.measure}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h2>Instructions</h2>
-              <p className="text-instr">{recipesInfo.strInstructions}</p>
+              <Youtube recipeName={recipesInfo.strMeal} />
             </div>
           </section>
         )}

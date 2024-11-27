@@ -1,42 +1,47 @@
-import "../styles/Result.css";
+import "../../styles/Result.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
-import Recipe from "./Recipe";
+import Recipe from "../Features/Recipe";
+
+interface Item {
+  meals: { strMeal: string; strMealThumb: string; idMeal: string }[];
+}
 
 interface ResultProps {
-  selectedIngredient?: string;
+  selectedType?: string;
   selectCountry?: string;
   selectCategory?: string;
+  type?: string;
 }
 
-interface RecipeProps {
-  meals: {
-    idMeal: string;
-    strMeal: string;
-    strMealThumb: string;
-    strIngredient: string;
-    strMeasure: string;
-    strInstructions: string;
-    strArea: string;
-  }[];
-}
+function AnyAnswer({ selectedType, type }: ResultProps) {
+  const [resultedList, setResultedList] = useState<Item["meals"] | null>(null);
 
-function Result({ selectedIngredient }: ResultProps) {
-  const [resultedList, setResultedList] = useState<RecipeProps["meals"] | null>(
-    null,
-  );
+  function homeChoice() {
+    if (type === "Country") {
+      return "a";
+    }
+    if (type === "Ingredient") {
+      return "i";
+    }
+    if (type === "Category") {
+      return "c";
+    }
+  }
+
+  const homeSelection = homeChoice();
+
   useEffect(() => {
     fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredient}`,
+      `https://www.themealdb.com/api/json/v1/1/filter.php?${homeSelection}=${selectedType}`,
     )
       .then((response) => response.json())
-      .then((data: RecipeProps) => {
+      .then((data: Item) => {
         setResultedList(data.meals);
       })
       .catch((err) => console.log(err));
-  }, [selectedIngredient]);
+  }, [selectedType, homeSelection]);
 
-  // Ceci pour seulement afficher la recette
   const [popup, setPopup] = useState(false);
   const [choosenRecipe, setChoosenRecipe] = useState<string>("");
 
@@ -52,7 +57,11 @@ function Result({ selectedIngredient }: ResultProps) {
         resultedList.map((result) => (
           <div className="cards-container" key={result.idMeal}>
             <section className="card">
-              <button type="button" onClick={() => handleClick(result.idMeal)}>
+              <button
+                type="button"
+                onClick={() => handleClick(result.idMeal)}
+                className="recipe-btn"
+              >
                 <article className="sectionimage">
                   <img
                     src={result.strMealThumb}
@@ -79,4 +88,4 @@ function Result({ selectedIngredient }: ResultProps) {
   );
 }
 
-export default Result;
+export default AnyAnswer;

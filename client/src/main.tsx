@@ -2,10 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import RandomResult from "./components/RandomResult";
 import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
-import PageIngredients from "./pages/PageIngredients.tsx";
+import PreferedChoice from "./pages/PreferedChoice.tsx";
+import RandomResult from "./pages/RandomResult.tsx";
 
 const router = createBrowserRouter([
   {
@@ -26,8 +26,8 @@ const router = createBrowserRouter([
         element: <RandomResult />,
       },
       {
-        path: "/PageIngredients",
-        element: <PageIngredients />,
+        path: "/PreferedChoice/:type",
+        element: <PreferedChoice />,
       },
     ],
   },
