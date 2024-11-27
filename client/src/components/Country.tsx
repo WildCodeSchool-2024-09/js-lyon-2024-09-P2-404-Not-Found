@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../styles/question.css";
+import "../styles/Question.css";
 import Chef from "../images/logo-chef.png";
 
 interface countryProps {
@@ -36,7 +36,7 @@ function Country() {
               <select
                 className="choice"
                 name="country"
-                id="country"
+                id="search-select"
                 value={selectCountry}
                 onChange={(e) => setSelectCountry(e.target.value)}
               >

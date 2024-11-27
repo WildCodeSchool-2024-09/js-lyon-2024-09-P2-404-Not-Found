@@ -1,6 +1,6 @@
-import "../styles/nav.css";
+import "../styles/Nav.css";
 import { Link } from "react-router-dom";
-import Logo from "../images/logofrigo.png";
+import Logo from "../images/Cook'in-logo.png";
 
 function Nav() {
   return (
@@ -15,6 +15,19 @@ function Nav() {
             {/* ajout à favorite */}
             <Link to="/favorites"> Favorite</Link>
           </p>
+
+          <div>
+            <Link to="/">
+              <img src={Logo} alt="logo" />
+            </Link>
+          </div>
+          <div>
+            <p>
+              <Link to="/about" className="about-link">
+                About
+              </Link>
+            </p>
+          </div>
         </section>
       </nav>
     </>

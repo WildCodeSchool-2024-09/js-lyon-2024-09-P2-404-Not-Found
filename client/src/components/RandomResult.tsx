@@ -1,12 +1,12 @@
+import "../styles/Result.css";
 import { useEffect, useState } from "react";
-import "../styles/RandomResult.css";
+import { Rating } from "react-simple-star-rating";
 import Chef from "../images/logo-chef.png";
-import "../styles/Ingredient.css";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import addToFavorites from "../utils/HandleFavorites";
-// Typage
+
 type Meal = {
   idMeal: string;
   strMeal: string;
@@ -14,72 +14,68 @@ type Meal = {
 };
 
 function Result() {
-  const [recipes, setRecipes] = useState<Meal[]>([]);
+  const [results, setresults] = useState<Meal[]>([]);
 
   useEffect(() => {
-    const getRecipes = () => {
-      const recipePromises = [];
+    const getresults = () => {
+      const resultPromises = [];
       for (let i = 0; i < 4; i++) {
-        recipePromises.push(
+        resultPromises.push(
           fetch("https://www.themealdb.com/api/json/v1/1/random.php")
             .then((response) => response.json())
             .then((data) => data.meals[0]),
         );
       }
+      // si une des promesses echoue alors on affiche le message d'erreur et promise all est rejetté.
+      //promiseall : -lancer des appels a api en parrallèle, attendre que tous les appels soient réussis avant de continuer, obtenir un seul tableau à partir des plusieurs appels.
+      Promise.all(resultPromises) //promesses resolues--> promiseall retourne une promesse unique pour toutes sous forme d'un tableau de résultat
+        //quand toutes les promesses du tableau result promesses sont terminées.
+        .then((meals) => setresults(meals))
 
-      Promise.all(recipePromises) //promesses resolues--> promiseall retourne une promesse unique pour toutes sous forme d'un tableau de résultat
-        //quand toutes les promesses du tableau recipe promesses sont terminées.
-        .then((meals) => setRecipes(meals)) //// renvoit ce tableau nommé meals contenant le resultat de chaque promesses. resultats =  chque appel à l'api( recettes ),
-        // tableau meals passé à setrecipe pour actualiser l'ajout des recettes.
         .catch((error) => {
-          console.error("Erreur de récupération des données recettes:", error); // si un appel à l'api echoue, promise.all est rejetté, on affiche un msg d'erreur.
+          console.error("Erreur de récupération des données recettes:", error);
         });
     };
 
-    getRecipes();
+    getresults();
   }, []);
-  // fonction pour chercher la recette sur youtube
-  function generateYouTubeSearchUrl(mealName: string): string {
-    return `https://www.youtube.com/results?search_query=${encodeURIComponent(mealName)}+recipe`;
-  }
 
   return (
     <>
-      <section className="containerRandom">
-        <h2> Random dishes </h2>
-        <article className="containerimg">
-          <img className="image" src={Chef} alt="Chef Icon" />
-        </article>
+      <section className="Questioncontainer">
+        <div className="inside-question">
+          <div className="outside">
+            <img className="image" src={Chef} alt="Chef Icon" />
+          </div>
+          <article>
+            <h2> Random dishes </h2>
+          </article>
+        </div>
       </section>
       <ToastContainer position="bottom-right" />
       {/* <ToastContainer /> gère l'affichage des toast et doit être present une fois dans le composant racine ou dans le composant qui affiche les toasts.  */}
-      <div className="recipes-container">
-        <div className="recipe-cards">
-          {recipes.map((recipe) => (
-            <div className="recipe-card" key={recipe.idMeal}>
-              {/* affiche image de la recette  */}
-              <img
-                src={recipe.strMealThumb}
-                alt={recipe.strMeal}
-                className="recipe-image"
-              />
-              {/* affiche le nom de la recette  */}
-              <h3>{recipe.strMeal}</h3>
-              {/* boutton favorite */}
-              <button type="button" onClick={() => addToFavorites(recipe)}>
-                ❤️ Add to favorite
-              </button>
-              <a
-                href={generateYouTubeSearchUrl(recipe.strMeal)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="recipe-button"
-              >
-                ▶️𝚈𝚘𝚞𝚝𝚞𝚋𝚎
-              </a>
-            </div>
-          ))}
-        </div>
+      <div className="result-container">
+        {results.map((result) => (
+          <div className="cards-container" key={result.idMeal}>
+            <section className="card">
+              <article className="sectionimage">
+                <img
+                  src={result.strMealThumb}
+                  alt={result.strMeal}
+                  className="card-image"
+                />
+              </article>
+              <article className="sectiontexte">
+                <h3>{result.strMeal}</h3>
+                {/* boutton favorite */}
+                <button type="button" onClick={() => addToFavorites(result)}>
+                  ❤️ Add to favorite
+                </button>
+                <Rating fillColor="#FFA500" emptyColor="#ffffffcf" />
+              </article>
+            </section>
+          </div>
+        ))}
       </div>
     </>
   );

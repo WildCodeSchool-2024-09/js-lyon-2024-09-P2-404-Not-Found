@@ -1,5 +1,6 @@
-import "../styles/Result2.css";
+import "../styles/Result.css";
 import { useEffect, useState } from "react";
+import { Rating } from "react-simple-star-rating";
 
 interface Item {
   meals: { strMeal: string; strMealThumb: string; idMeal: string }[];
@@ -11,15 +12,8 @@ interface ResultProps {
   selectCategory?: string;
 }
 
-function Result2({ selectedIngredient }: ResultProps) {
+function Result({ selectedIngredient }: ResultProps) {
   const [resultedList, setResultedList] = useState<Item["meals"] | null>(null);
-
-  // if (selectCountry !=== undefined) {
-  //   return `filter.php?a=${selectCountry}`
-  // }
-  // if (selectCategory !=== undefined) {
-  //   return `filter.php?c=${selectCategory}`
-  // }
 
   useEffect(() => {
     fetch(
@@ -33,7 +27,7 @@ function Result2({ selectedIngredient }: ResultProps) {
   }, [selectedIngredient]);
 
   return (
-    <div>
+    <div className="result-container">
       {resultedList !== null &&
         resultedList.length > 0 &&
         resultedList.map((result) => (
@@ -48,6 +42,7 @@ function Result2({ selectedIngredient }: ResultProps) {
               </article>
               <article className="sectiontexte">
                 <h3>{result.strMeal}</h3>
+                <Rating fillColor="#FFA500" emptyColor="#ffffffcf" />
               </article>
             </section>
           </div>
@@ -56,4 +51,4 @@ function Result2({ selectedIngredient }: ResultProps) {
   );
 }
 
-export default Result2;
+export default Result;

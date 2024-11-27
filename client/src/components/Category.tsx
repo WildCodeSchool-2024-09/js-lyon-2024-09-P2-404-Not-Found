@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Chef from "../images/logo-chef.png";
-
-import "../styles/question.css";
+import "../styles/Question.css";
 
 interface categoryProps {
   meals: {
@@ -35,12 +34,11 @@ function Category() {
             <select
               className="choice"
               name="category"
-              id="category"
+              id="search-select"
               value={selectCategory}
               onChange={(e) => setSelectCategory(e.target.value)}
             >
               <option value="">Please choose your Category 🎯</option>
-              {/* fin */}
               {category !== null &&
                 category.length > 0 &&
                 category.map((element) => (

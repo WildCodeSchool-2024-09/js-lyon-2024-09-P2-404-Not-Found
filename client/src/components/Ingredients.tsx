@@ -1,5 +1,5 @@
 import "../styles/Ingredient.css";
-import "../styles/question.css";
+import "../styles/Question.css";
 import { useEffect, useState } from "react";
 import Chef from "../images/logo-chef.png";
 
@@ -44,6 +44,7 @@ function Ingredient({ handleChange, selectedIngredient }: IngredientProps) {
             </article>
             <article>
               <select
+                id="search-select"
                 name="chooseIngredients"
                 className="choice"
                 value={selectedIngredient}
