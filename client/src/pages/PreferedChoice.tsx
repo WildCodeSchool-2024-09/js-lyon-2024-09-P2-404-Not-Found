@@ -1,7 +1,7 @@
 import "../styles/Ingredient.css";
 import "../styles/question.css";
+import "../styles/Result.css";
 import { useState } from "react";
-import "../styles/Result2.css";
 import { useParams } from "react-router-dom";
 import AnyAnswer from "../components/AllQuestions/AnyAnswer";
 import AnyChoice from "../components/AllQuestions/AnyChoice";

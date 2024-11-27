@@ -1,4 +1,4 @@
-import "../../styles/Result.css";
+import "../styles/Result.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 
@@ -7,42 +7,27 @@ interface Item {
 }
 
 interface ResultProps {
-  selectedType?: string;
+  selectedIngredient?: string;
   selectCountry?: string;
   selectCategory?: string;
-  type?: string;
 }
 
-function AnyAnswer({ selectedType, type }: ResultProps) {
+function Result({ selectedIngredient }: ResultProps) {
   const [resultedList, setResultedList] = useState<Item["meals"] | null>(null);
-
-  function homeChoice() {
-    if (type === "Country") {
-      return "a";
-    }
-    if (type === "Ingredient") {
-      return "i";
-    }
-    if (type === "Category") {
-      return "c";
-    }
-  }
-
-  const homeSelection = homeChoice();
 
   useEffect(() => {
     fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?${homeSelection}=${selectedType}`,
+      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedIngredient}`,
     )
       .then((response) => response.json())
       .then((data: Item) => {
         setResultedList(data.meals);
       })
       .catch((err) => console.log(err));
-  }, [selectedType, homeSelection]);
+  }, [selectedIngredient]);
 
   return (
-    <div>
+    <div className="result-container">
       {resultedList !== null &&
         resultedList.length > 0 &&
         resultedList.map((result) => (
@@ -66,4 +51,4 @@ function AnyAnswer({ selectedType, type }: ResultProps) {
   );
 }
 
-export default AnyAnswer;
+export default Result;

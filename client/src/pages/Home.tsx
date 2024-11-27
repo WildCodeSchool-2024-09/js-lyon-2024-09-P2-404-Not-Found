@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Home.css";
-import "../styles/question.css";
+import "../styles/Question.css";
 import "../styles/Ingredient.css";
 import Chef from "../images/logo-chef.png";
 
