@@ -4,24 +4,18 @@ import Logo from "../images/Cook'in-logo.png";
 
 function Nav() {
   return (
-    <>
-      <nav>
-        <section className="navbar">
-          <div>
-            <Link to="/">
-              <img src={Logo} alt="logo" />
-            </Link>
-          </div>
-          <div>
-            <p>
-              <Link to="/about" className="about-link">
-                About
-              </Link>
-            </p>
-          </div>
-        </section>
-      </nav>
-    </>
+    <section className="navbar">
+      <Link to="/">
+        <img src={Logo} alt="logo" />
+      </Link>
+      <p>
+        <Link to="/about">About</Link>
+      </p>
+      <p>
+        {/* ajout à favorite */}
+        <Link to="/favorites"> Favorite</Link>
+      </p>
+    </section>
   );
 }
 
