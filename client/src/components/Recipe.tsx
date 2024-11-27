@@ -1,75 +1,105 @@
 import "../styles/Recipe.css";
-
-// interface meals {
-//   idMeal: string;
-//   strMeal: string;
-//   strMealThumb: string;
-//   strIngredient: string;
-//   strMeasure: string;
-//   strInstructions: string;
-//   strArea: string;
-// }
+import { useEffect, useState } from "react";
 
 interface RecipeProps {
   trigger: boolean;
-  // recipesInfo: meals{};
+  setTrigger: (index: boolean) => void;
+  choosenRecipe: string;
 }
-function Recipe({ trigger }: RecipeProps) {
-  // Affichage des ingredients et mesure que si recipesInfo est different de null
-  // const ingredients = [];
-  // for (let i = 1; i <= 20; i++) {
-  // 	if (
-  // 		recipesInfo &&
-  // 		recipesInfo.trim() !== "" &&
-  // 		recipesInfo.trim() !== null
-  // 	) {
-  // 		ingredients.push(recipesInfo[`strIngredient${i}`]);
-  // 	}
-  // }
 
-  const meal = {
-    strMeal: "glace",
-    idMeal: "france",
-    strIngredient1: "Une pomme bien fraiche",
-    strInstructions: "Tu commande Uber et tu saoule pas  ! ",
-    strCategory: "Toto",
-    strMealThumb:
-      "https://www.savorynothings.com/wp-content/uploads/2021/04/churros-recipe-image-7.jpg",
+interface recipesInfoProps {
+  meals: {
+    idMeal: string;
+    strMeal: string;
+    strMealThumb: string;
+    strInstructions: string;
+    strArea: string;
+    strCategory: string;
+    [key: string]: string | undefined; // Add this to allow dynamic keys
   };
+}
+
+function Recipe({ trigger, setTrigger, choosenRecipe }: RecipeProps) {
+  const [recipesInfo, setRecipesInfo] = useState<
+    recipesInfoProps["meals"] | null
+  >(null);
+  const [ingredients, setIngredients] = useState<
+    { ingredient: string; measure: string }[]
+  >([]);
+
+  useEffect(() => {
+    fetch(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${choosenRecipe}`,
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const recipe = data.meals[0];
+        setRecipesInfo(recipe);
+
+        // Extract ingredients and measures dynamically
+        const extractedIngredients: { ingredient: string; measure: string }[] =
+          [];
+
+        for (let i = 1; i <= 20; i++) {
+          const ingredient = recipe[`strIngredient${i}`];
+          const measure = recipe[`strMeasure${i}`];
+
+          if (
+            ingredient &&
+            ingredient.trim() !== "" &&
+            measure &&
+            measure.trim() !== ""
+          ) {
+            extractedIngredients.push({ ingredient, measure });
+          }
+        }
+
+        setIngredients(extractedIngredients);
+      })
+      .catch((error) => console.error("Error fetching recipe:", error));
+  }, [choosenRecipe]);
 
   return trigger ? (
     <div className="popup">
       <div className="popup-inner">
-        <button type="button" className="close-btn">
+        <button
+          type="button"
+          className="close-btn"
+          onClick={() => setTrigger(false)}
+        >
           X
         </button>
-        <section>
+        {recipesInfo && (
           <section>
+            <h1>{recipesInfo.strMeal}</h1>
+            <img
+              src={recipesInfo.strMealThumb}
+              alt={recipesInfo.strMeal}
+              className="recipe-image"
+            />
+            <h2>Category: {recipesInfo.strCategory}</h2>
+
             <div>
-              <h1>{meal.strMeal}</h1>
-              <img src={meal.strMealThumb} alt={meal.strMeal} />
-              <h2>{meal.strCategory}</h2>
+              <h2>Ingredients:</h2>
+              <ul className="listingd">
+                {ingredients.map((item, index) => (
+                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                  <li key={index}>
+                    {item.ingredient} - {item.measure}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div>
-              <h2>Ingrédients</h2>
-              {/* <ul>
-								{ingredients.map((ingredient, index) => (
-									<li key={index}>{ingredient}</li>
-								))}
-								<li>{meal.strIngredient1}</li>
-							</ul> */}
-            </div>
+
             <div>
               <h2>Instructions</h2>
-              <p>{meal.strInstructions}</p>
+              <p className="text-instr">{recipesInfo.strInstructions}</p>
             </div>
           </section>
-        </section>
+        )}
       </div>
     </div>
-  ) : (
-    ""
-  );
+  ) : null;
 }
 
 export default Recipe;

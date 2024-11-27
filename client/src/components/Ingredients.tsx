@@ -12,8 +12,12 @@ interface dataProps {
   }[];
 }
 
-function Ingredient() {
-  const [selectedIngredient, setSelectedIngredient] = useState("");
+interface IngredientProps {
+  handleChange: React.Dispatch<React.ChangeEvent<HTMLSelectElement>>;
+  selectedIngredient?: string;
+}
+
+function Ingredient({ handleChange, selectedIngredient }: IngredientProps) {
   const [listIngredients, setListIngredients] = useState<
     dataProps["meals"] | null
   >(null);
@@ -43,8 +47,12 @@ function Ingredient() {
                 name="chooseIngredients"
                 className="choice"
                 value={selectedIngredient}
-                onChange={(e) => setSelectedIngredient(e.target.value)}
+                onChange={handleChange}
               >
+                {/* value-->"" à l'état initial de la liste deroulante d'ingredients permetant de le selectionner, disabled --> non selectionnable dans cette liste  */}
+                <option value="">Please choose your ingredient 👩‍🍳</option>
+                {/* fin */}
+                {/* debut de la liste d'ingrédiants chargé depuis l'api */}
                 {listIngredients !== null &&
                   listIngredients.length > 0 &&
                   listIngredients.map((ingredient) => (
