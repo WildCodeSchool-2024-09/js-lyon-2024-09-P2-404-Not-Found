@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import Recipe from "../components/Features/Recipe";
-import "../styles/Recipe.css";
+import "../styles/Global.css";
 
 type Meal = {
   idMeal: string;

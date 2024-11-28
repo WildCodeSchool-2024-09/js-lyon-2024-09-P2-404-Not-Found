@@ -1,4 +1,4 @@
-import "../../styles/Result.css";
+import "../../styles/Global.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import Recipe from "../Features/Recipe";

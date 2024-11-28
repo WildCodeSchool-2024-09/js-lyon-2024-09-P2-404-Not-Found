@@ -1,5 +1,4 @@
-import "../../styles/Ingredient.css";
-import "../../styles/question.css";
+import "../../styles/Global.css";
 import { useEffect, useState } from "react";
 import Chef from "../../images/logo-chef.png";
 
@@ -52,8 +51,8 @@ function AnyChoice({ handleChange, selectedType, type }: IngredientProps) {
     <>
       <section className="Questioncontainer">
         <div className="inside-question">
-          <div className="outside">
-            <img src={Chef} alt="chef" className="image" />
+          <div className="back-chef">
+            <img src={Chef} alt="chef" className="chef-img" />
           </div>
           <section>
             <article>
@@ -62,7 +61,7 @@ function AnyChoice({ handleChange, selectedType, type }: IngredientProps) {
             <article>
               <select
                 name="chooseIngredients"
-                className="choice"
+                className="search-select"
                 value={selectedType}
                 onChange={handleChange}
               >

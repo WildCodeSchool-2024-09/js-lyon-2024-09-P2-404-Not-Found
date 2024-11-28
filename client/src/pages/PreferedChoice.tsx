@@ -1,6 +1,4 @@
-import "../styles/Ingredient.css";
-import "../styles/question.css";
-import "../styles/Result.css";
+import "../styles/Global.css";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import AnyAnswer from "../components/AllQuestions/AnyAnswer";

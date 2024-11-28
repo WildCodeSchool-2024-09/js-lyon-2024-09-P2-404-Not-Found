@@ -1,4 +1,4 @@
-import "../styles/Result.css";
+import "../styles/Global.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { ToastContainer } from "react-toastify";
@@ -52,8 +52,8 @@ function Result() {
     <>
       <section className="Questioncontainer">
         <div className="inside-question">
-          <div className="outside">
-            <img className="image" src={Chef} alt="Chef Icon" />
+          <div className="back-chef">
+            <img className="chef-img" src={Chef} alt="Chef Icon" />
           </div>
           <article>
             <h2> Random dishes </h2>
