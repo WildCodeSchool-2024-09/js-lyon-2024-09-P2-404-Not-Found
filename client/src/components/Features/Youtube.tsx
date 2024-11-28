@@ -1,5 +1,4 @@
-import "../../styles/RandomResult.css";
-import "../../styles/Ingredient.css";
+import "../../styles/Global.css";
 
 interface yTProps {
   recipeName: string;
@@ -20,9 +19,9 @@ function Youtube({ recipeName }: yTProps) {
         href={generateYouTubeSearchUrl(recipeName)}
         target="_blank"
         rel="noopener noreferrer"
-        className="recipe-button"
+        className="youtube-button"
       >
-        ▶️𝚈𝚘𝚞𝚝𝚞𝚋𝚎
+        ▶️ 𝚈𝚘𝚞𝚝𝚞𝚋𝚎
       </a>
     </div>
   );

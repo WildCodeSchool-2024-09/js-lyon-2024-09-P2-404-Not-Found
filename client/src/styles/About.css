@@ -1,14 +1,11 @@
-@import "./index.css";
-
 .whoAreWe,
 .history {
   background-color: var(--third-color);
   border-radius: 20px;
   text-align: center;
-  margin-top: 3em;
   padding: 1em;
   width: 100%;
-  margin: 1em;
+  margin: 3em 1em 1em 1em;
 }
 
 .inside {
@@ -40,7 +37,7 @@
   line-height: 1.6;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) and (max-width: 1080px) {
   .whoAreWe,
   .history {
     padding: 2em;
@@ -61,16 +58,16 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .inside {
-    padding: 3em;
+@media screen and (min-width: 1081px) {
+  .whoAreWe,
+  .history {
+    padding: 1%;
+    max-width: 50%;
   }
-
   .creators img {
     width: 10em;
     height: 10em;
   }
-
   .history p {
     font-size: 1.2em;
   }

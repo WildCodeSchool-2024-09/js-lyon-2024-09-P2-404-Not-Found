@@ -1,4 +1,4 @@
-import "../../styles/Recipe.css";
+import "../../styles/Global.css";
 import { useEffect, useState } from "react";
 import addToFavorites from "../../utils/HandleFavorites";
 import Youtube from "./Youtube";
@@ -83,7 +83,7 @@ function Recipe({ trigger, setTrigger, choosenRecipe }: RecipeProps) {
                 />
                 <div>
                   <h3>Instructions</h3>
-                  <p className="text-instr">{recipesInfo.strInstructions}</p>
+                  <p>{recipesInfo.strInstructions}</p>
                 </div>
               </div>
               <article className="recipe-description">
@@ -106,9 +106,13 @@ function Recipe({ trigger, setTrigger, choosenRecipe }: RecipeProps) {
                 </div>
               </article>
             </section>
-            <div>
+            <div className="btn-links">
               <Youtube recipeName={recipesInfo.strMeal} />
-              <button type="button" onClick={() => addToFavorites(recipesInfo)}>
+              <button
+                type="button"
+                className="favorite-btn"
+                onClick={() => addToFavorites(recipesInfo)}
+              >
                 ❤️ Add to favorite
               </button>
             </div>

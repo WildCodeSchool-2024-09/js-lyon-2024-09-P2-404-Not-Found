@@ -1,4 +1,5 @@
 import "../styles/About.css";
+import "../styles/Global.css";
 
 const profilCreator = [
   {
