@@ -1,8 +1,9 @@
 import "./styles/App.css";
-import { Outlet } from "react-router-dom"; //2/importer le outlet dans app
+import "react-toastify/dist/ReactToastify.css";
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer.tsx";
 import Nav from "./components/Nav.tsx";
-
 function App() {
   return (
     <>
@@ -10,8 +11,9 @@ function App() {
         <Nav />
       </nav>
       <main>
+        <ToastContainer position="bottom-right" />
+        {/* <ToastContainer /> gère l'affichage des toast et doit être present une fois dans le composant racine ou dans le composant qui affiche les toasts.  */}
         <Outlet />
-        {/* 3) outlet posé la va chercher les enfants de app déclarés dans le router */}
       </main>
       <footer>
         <Footer />

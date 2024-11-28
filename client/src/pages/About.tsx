@@ -1,29 +1,30 @@
 import "../styles/About.css";
+import "../styles/Global.css";
 
 const profilCreator = [
   {
     creatorName: "Jessica",
     id: 1,
-    creatorPost: "Developper",
-    creatorImg: "https://avatar.iran.liara.run/public/96",
+    creatorPost: "Product Owner",
+    creatorImg: "src/images/colette.jpg",
   },
   {
     creatorName: "Stephen",
     id: 2,
-    creatorPost: "Developper",
-    creatorImg: "https://avatar.iran.liara.run/public/15",
+    creatorPost: "Scrum Master",
+    creatorImg: "src/images/horst.jpg",
   },
   {
-    creatorName: "Michael",
+    creatorName: "Michaël",
     id: 3,
     creatorPost: "Developper",
-    creatorImg: "https://avatar.iran.liara.run/public/7",
+    creatorImg: "src/images/alfredo.jpg",
   },
   {
     creatorName: "Léa",
     id: 4,
     creatorPost: "Developper",
-    creatorImg: "https://avatar.iran.liara.run/public/83",
+    creatorImg: "src/images/remi.jpg",
   },
 ];
 
@@ -48,11 +49,14 @@ function About() {
         <div className="inside">
           <h2>Notre Histoire</h2>
           <p>
-            Il était une fois, un groupe de 4 personnes qui se demandaient que
-            cuisiner pour leur repas de midi. Au fur et à mesure de leur
-            questionnement, ils se sont rendus compte qu'ils n'étaient
-            probablement pas les seuls à se poser si souvent la question. C'est
-            pourquoi ils créérent Plants'In.
+            Il était une fois, un groupe de quatre amis qui se demandaient quoi
+            cuisiner pour leur repas de midi. Après plusieurs tentatives
+            infructueuses, allant de la pizza brûlée à la soupe de légumes qui
+            aurait pu servir de ciment, ils réalisèrent qu’ils n’étaient
+            probablement pas les seuls à se poser cette question cruciale. C’est
+            ainsi qu’ils décidèrent de créer Cook’In, une solution pour tous
+            ceux qui, comme eux, se retrouvaient souvent face à un frigo vide et
+            une imagination en panne.
           </p>
         </div>
       </section>

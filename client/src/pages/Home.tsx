@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Home.css";
-import "../styles/question.css";
-import "../styles/Ingredient.css";
+import "../styles/Global.css";
 import Chef from "../images/logo-chef.png";
 
 function Home() {
@@ -10,11 +8,11 @@ function Home() {
   const navigate = useNavigate();
 
   if (search === "Category") {
-    navigate("/PageCategory");
+    navigate("/PreferedChoice/Category");
   } else if (search === "Country") {
-    navigate("/PageCountry");
+    navigate("/PreferedChoice/Country");
   } else if (search === "Ingredient") {
-    navigate("/PageIngredients");
+    navigate("/PreferedChoice/Ingredient");
   } else if (search === "Random") {
     navigate("/RandomResult");
   }
@@ -23,19 +21,27 @@ function Home() {
     <section className="Questioncontainer">
       <div className="inside-question">
         <div className="back-chef">
-          <img src={Chef} alt="chef" className="image" />
+          <img src={Chef} alt="chef" className="chef-img" />
         </div>
         <div>
           <h1>What are we eating today?</h1>
           <select
             onChange={(event) => setSearch(event.target.value)}
             name="search-type"
-            id="search-select"
+            className="search-select"
           >
-            <option value="">Please choose search type</option>
-            <option value="Category">Category</option>
-            <option value="Country">Country</option>
-            <option value="Ingredient">Ingredient</option>
+            <option value="" key="Home">
+              Please choose search type
+            </option>
+            <option value="Category" key="Category">
+              Category
+            </option>
+            <option value="Country" key="Country">
+              Country
+            </option>
+            <option value="Ingredient" key="Ingredient">
+              Ingredient
+            </option>
             <option value="Random">Random</option>
           </select>
         </div>
