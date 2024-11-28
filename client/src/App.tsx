@@ -11,8 +11,9 @@ function App() {
         <Nav />
       </nav>
       <main>
-        <Outlet />
         <ToastContainer position="bottom-right" />
+        {/* <ToastContainer /> gère l'affichage des toast et doit être present une fois dans le composant racine ou dans le composant qui affiche les toasts.  */}
+        <Outlet />
       </main>
       <footer>
         <Footer />

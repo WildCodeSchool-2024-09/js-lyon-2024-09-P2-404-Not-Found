@@ -1,7 +1,6 @@
 import "../styles/Global.css";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
-import { ToastContainer } from "react-toastify";
 import Recipe from "../components/Features/Recipe";
 import Chef from "../images/logo-chef.png";
 import "react-toastify/dist/ReactToastify.css";
@@ -60,8 +59,6 @@ function Result() {
           </article>
         </div>
       </section>
-      <ToastContainer position="bottom-right" />
-      {/* <ToastContainer /> gère l'affichage des toast et doit être present une fois dans le composant racine ou dans le composant qui affiche les toasts.  */}
       <div className="result-container">
         {results.map((result) => (
           <div className="cards-container" key={result.idMeal}>

@@ -11,6 +11,12 @@
   --main-text-size: 16px;
 }
 
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   background-image: url("../images/background-spoon.jpg");
   background-size: cover;
