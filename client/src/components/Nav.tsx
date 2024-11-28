@@ -8,18 +8,20 @@ function Nav() {
       <Link to="/" className="about-link">
         <img src={Logo} alt="logo" className="logo" />
       </Link>
-      <p>
-        <Link to="/about" className="about-link">
-          About
-        </Link>
-      </p>
-      <p>
-        {/* ajout à favorite */}
-        <Link to="/favorites" className="about-link">
-          {" "}
-          Favorite
-        </Link>
-      </p>
+      <div className="navbar-links">
+        <p>
+          <Link to="/about" className="about-link">
+            About
+          </Link>
+        </p>
+        <p>
+          {/* ajout à favorite */}
+          <Link to="/favorites" className="about-link">
+            {" "}
+            Favorite
+          </Link>
+        </p>
+      </div>
     </section>
   );
 }
