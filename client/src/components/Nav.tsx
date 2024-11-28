@@ -1,19 +1,28 @@
 import "../styles/nav.css";
 import { Link } from "react-router-dom";
-import Logo from "../images/logofrigo.png";
+import Logo from "../images/Cook'in-logo.png";
 
 function Nav() {
   return (
-    <>
-      <nav>
-        <Link to="/">
-          <img src={Logo} alt="logo" />
-        </Link>
+    <section className="navbar">
+      <Link to="/" className="about-link">
+        <img src={Logo} alt="logo" className="logo" />
+      </Link>
+      <div className="navbar-links">
         <p>
-          <Link to="/about">About</Link>
+          <Link to="/about" className="about-link">
+            About
+          </Link>
         </p>
-      </nav>
-    </>
+        <p>
+          {/* ajout à favorite */}
+          <Link to="/favorites" className="about-link">
+            {" "}
+            Favorite
+          </Link>
+        </p>
+      </div>
+    </section>
   );
 }
 
