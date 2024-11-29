@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer.tsx";
 import Nav from "./components/Nav.tsx";
+
 function App() {
   return (
     <>
