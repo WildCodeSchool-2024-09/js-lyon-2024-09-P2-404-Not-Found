@@ -1,4 +1,5 @@
 /* Version pour mobile  */
+
 main {
   display: flex;
   flex-direction: column;
@@ -75,7 +76,7 @@ footer p {
 
 @media screen and (min-width: 1081px) {
   main {
-    margin-left: 20em;
+    margin-left: 1em;
     min-height: 90vh;
   }
 
